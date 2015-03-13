@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReactFluxDashboardProto.Web.Ignore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,19 @@ namespace ReactFluxDashboardProto.Web.Api
     public class LinesController : ApiController
     {
         // GET: api/Lines
-        public IEnumerable<string> Get()
+        public IEnumerable<ProductionDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new[] 
+            {
+                new ProductionDto { Name = "AAA", Type = "TypeA" },
+                new ProductionDto { Name = "BBB", Type = "TypeB" },
+            };
         }
 
         // GET: api/Lines/5
-        public string Get(int id)
+        public ProductionDto Get(int id)
         {
-            return "value";
-        }
-
-        // POST: api/Lines
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Lines/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Lines/5
-        public void Delete(int id)
-        {
+            return new ProductionDto { Name = "AAA", Type = "TypeA" };
         }
     }
 }
