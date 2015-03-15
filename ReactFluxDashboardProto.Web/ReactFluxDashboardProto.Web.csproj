@@ -93,7 +93,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Vendor\bootstrap.css" />
+    <Content Include="Content\Vendor\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Ignore\Ignore everything in this directory.txt" />
+    <Content Include="Scripts\dashboardPrototypeBundle.js" />
+    <Content Include="Scripts\Vendor\bootstrap.js" />
+    <Content Include="Scripts\Vendor\bootstrap.min.js" />
+    <Content Include="Scripts\Vendor\jquery-1.10.2.js" />
+    <Content Include="Scripts\Vendor\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\Vendor\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\Vendor\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,7 +116,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Ignore\ProductionDto.cs" />
+    <Compile Include="Ignore\LineDto.cs" />
     <Compile Include="Ignore\StationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +124,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\LayoutPage.cshtml" />
+    <None Include="Scripts\Vendor\jquery-1.10.2.intellisense.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

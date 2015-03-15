@@ -11,19 +11,19 @@ namespace ReactFluxDashboardProto.Web.Api
     public class LinesController : ApiController
     {
         // GET: api/Lines
-        public IEnumerable<ProductionDto> Get()
+        public IEnumerable<LineDto> Get()
         {
             return new[] 
             {
-                new ProductionDto { Name = "AAA", Type = "TypeA" },
-                new ProductionDto { Name = "BBB", Type = "TypeB" },
+                new LineDto { Name = "AAA", Type = "TypeA" },
+                new LineDto { Name = "BBB", Type = "TypeB" },
             };
         }
 
         // GET: api/Lines/5
-        public ProductionDto Get(int id)
+        public LineDto Get(int id)
         {
-            return new ProductionDto { Name = "AAA", Type = "TypeA" };
+            return new LineDto { Name = "AAA", Type = "TypeA" };
         }
     }
 }

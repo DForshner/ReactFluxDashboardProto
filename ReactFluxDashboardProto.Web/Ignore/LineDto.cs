@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ReactFluxDashboardProto.Web.Ignore
 {
-    public class ProductionDto
+    public class LineDto
     {
         public string Name { get; set; }
         public string Type { get; set; }
