@@ -1,3 +1,5 @@
+// Details of a single production line.
+
 "use strict";
 
 var React = require("React");

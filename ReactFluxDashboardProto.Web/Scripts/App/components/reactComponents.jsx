@@ -1,4 +1,6 @@
-﻿"use strict";
+﻿// Main application page
+
+"use strict";
 
 var React = require("React");
 
