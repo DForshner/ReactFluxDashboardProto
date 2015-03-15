@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="description" content="The description of my page" />
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/Vendor/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+        <script src="~/Scripts/Vendor/modernizr-2.6.2.js"></script>
+</head>
+    <body>
+        <div id="container body-content">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        <footer>
+        </footer>
+
+        <script src="~/Scripts/Vendor/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/Vendor/bootstrap.min.js"></script>
+
+        @RenderSection("Scripts")
+
+    </body>
+</html>

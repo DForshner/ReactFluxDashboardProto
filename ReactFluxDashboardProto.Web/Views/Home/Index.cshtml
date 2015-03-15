@@ -1,18 +1,13 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+    ViewBag.Title = "Dashboard";
 }
 
-<!DOCTYPE html>
+<div> 
+    <div id="dashboard-content"></div>
+</div>
 
-<html>
-<head>
-    <meta name="HomePage" content="Home Page" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/dashboardPrototypeBundle.js")"></script>
+}
