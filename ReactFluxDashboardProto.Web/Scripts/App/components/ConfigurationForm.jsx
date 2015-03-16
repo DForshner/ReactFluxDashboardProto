@@ -60,7 +60,6 @@ var ConfigurationForm = React.createClass({
     },
 
     renderSelect: function(id, label) {
-
     },
 
     render: function() {
