@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using System.CodeDom.Compiler;
-using System.Diagnostics;
+﻿using IronPython.Hosting;
 
 namespace ReactFluxDashboardProto.Web.Ignore
 {
@@ -13,67 +7,42 @@ namespace ReactFluxDashboardProto.Web.Ignore
     /// </summary>
     public class ScriptRunner
     {
-        private interface IScript
+        public class Features
         {
-            int Calculate(int a, int b);
+            public int A { get; set; }
+            public int B { get; set; }
+            public int C { get; set; }
+            public int TimeStep { get; set;}
+        }
+
+        public class Prediction 
+        {
+            public int Result { get; set; }
         }
 
         public int Calcuate(int a, int b)
         {
-            var source =
-                "namespace Scripting" +
-                "{" +
-                "   public class Formula : ReactFluxDashboardProto.Web.Ignore.ScriptRunner" +
-                "   {" +
-                "       public int Calculate(int a, int b)" +
-                "       {" +
-                "           return a + b;"+         
-                "       }" +
-                "   }" +
-                "{";
+            var engine = Python.CreateEngine();
 
-            var calculator = CompileCode(source);
+            var code =
+                "prediction.Result = features.A + features.B + features.C * features.TimeStep";
+            var script = engine.CreateScriptSourceFromString(code);
 
-            return RunScript(calculator, a, b); 
-        }
-
-        private static Assembly CompileCode(string source)
-        {
-            var csProvider = new Microsoft.CSharp.CSharpCodeProvider();
-
-            var options = new CompilerParameters();
-            options.GenerateExecutable = false;
-            options.GenerateInMemory = true;
-
-            var result = csProvider.CompileAssemblyFromSource(options, source);
-
-            if (result.Errors.HasErrors)
+            var scope = engine.CreateScope();
+            var features = new Features
             {
-                // :-(
-            }
+                A = a,
+                B = b
+            };
+            scope.SetVariable("features", features);
+            var prediction = new Prediction();
+            scope.SetVariable("prediction", prediction);
 
-            return result.CompiledAssembly;
-        }
+            var result = script.Execute(scope);
 
-        private static int RunScript(Assembly assembly, int a, int b)
-        {
-            var domain = AppDomain.CreateDomain("NewAppDomain");
-            //domain.Load(assembly.);
+            var test = scope.GetVariable<Prediction>("prediction");
 
-            var type = assembly
-                .GetExportedTypes()
-                .First(t => t.GetInterfaces().Any(iface => iface == typeof(IScript)));
-
-            var proxyObject = domain.CreateInstanceAndUnwrap(assembly.FullName, type.FullName) as IScript;
-
-            //var constructor = type.GetConstructor(System.Type.EmptyTypes);
-            //Debug.Assert(constructor.IsPublic);
-            //var scriptObject = constructor.Invoke(null) as IScript;
-
-            var result = proxyObject.Calculate(a, b);
-
-            AppDomain.Unload(domain);
-            return result; 
+            return test.Result;
         }
     }
 }
