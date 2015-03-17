@@ -1,3 +1,7 @@
+// Station related constants
+
+"use strict";
+
 var keyMirror = require('keymirror');
 
 var APIRoot = "http://localhost:35992/";
@@ -5,7 +9,7 @@ var APIRoot = "http://localhost:35992/";
 module.exports = {
 
     APIEndpoints: {
-        SERIES: APIRoot + "api/lines"
+        SERIES: APIRoot + "api/stations"
     },
 
     EventTypes: keyMirror({
@@ -13,6 +17,6 @@ module.exports = {
     }),
 
     ActionTypes: keyMirror({
-        GET_ALL_LINES: null
+        GET_ALL_STATIONS: null
     })
 };

@@ -80,6 +80,14 @@ var ConfigurationForm = React.createClass({
                 </select>
             </div>
         );
+    },
+
+    onSubmit: function(event) {
+        event.preventDefault();
+        var text = this.state.text.trim();
+        if (text) {
+            SeriesActionCreators.create(text);
+        }
     }
 });
 

@@ -1,18 +1,13 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var LineConstants = require('../constants/LineConstants');
-var LineWebApiUtils = require('../webapiutils/LineWebApiUtils');
 
 var LineActions = {
 
-  receiveAll: function(payload) {
-    AppDispatcher.handleServerAction({
-      type: LineConstants.ActionTypes.RECEIVE_LINES,
-      payload: payload
-    });
-  },
-
   loadAll: function(){
-    LineWebApiUtils.getAllLines(LineActions.receiveAll);
+    AppDispatcher.dispatch({
+        action: LineConstants.ActionTypes.GET_ALL_LINES,
+        payload: {}
+    });
   }
 
 };

@@ -7,9 +7,10 @@ var LineRow = require("./LineRow.jsx");
 
 var LineTableBody = React.createClass({
     render: function() {
-        var rows = this.props.data.map(function(line, index) {
+        var lines = this.props.data;
+        var rows = lines.map(function(line) {
             return (
-                <LineRow id={line.Id} name={line.Name} total={line.Total} key={index}/>
+                <LineRow id={line.Id} name={line.Name} total={line.Total}/>
             );
         });
         return (

@@ -3,34 +3,34 @@
 "use strict";
 
 var React = require("React");
+var FactoryStore = require("../stores/FactoryStore");
+var LineActionCreators = require('../actions/LineActionCreators');
 var LineTableHeader = require("./LineTableHeader.jsx");
 var LineTableBody = require("./LineTableBody.jsx");
 
 var LineTable = React.createClass({
 
-    loadLinesFromServer: function() {
-        var data = [
-            { Id: "A", Name: "Line A", Total:50 },
-            { Id: "B", Name: "Line B", Total:100 }
-        ];
-        this.setState({data: data});
-    },
-
-    getInitialState: function() {
-        return { data: [] };
+    linesChanged: function() {
+        this.forceUpdate();
     },
 
     componentDidMount: function() {
-        this.loadLinesFromServer();
+        FactoryStore.bind(this.linesChanged);
+        LineActionCreators.loadAll();
+    },
+
+    componentWillUnmount: function() {
+        FactoryStore.unbind(this.linesChanged);
     },
 
     render: function() {
+        var lines = FactoryStore.getAllLines();
         return (
             <div className="LineTable">
                 <h4>Factory Overview</h4>
                 <table className="table table-hover">
                     <LineTableHeader />
-                    <LineTableBody data={this.state.data} />
+                    <LineTableBody data={lines} />
                 </table>
             </div>
         );
