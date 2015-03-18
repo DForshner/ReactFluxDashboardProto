@@ -2,92 +2,126 @@
 
 "use strict";
 
-var React = require("React");
-
-var Model = {
-    Line1MinRate: 10,
-    Line1MaxRate: 100,
-    Line1Description: "",
-    Line1AlarmType: "",
-
-    Line2MinRate: 10,
-    Line2MaxRate: 100,
-    Line2Description: "",
-    Line2AlarmType: ""
-};
+var React = require("React/addons");
+var FactoryStore = require("../stores/FactoryStore");
+var ConfigurationActionCreators = require('../actions/ConfigurationActionCreators');
 
 var ConfigurationForm = React.createClass({
 
+    mixins: [React.addons.LinkedStateMixin],
+
     getInitialState: function() {
-        return Model;
+        return this._getConfiguration();
     },
 
-    handleInputChange: function(event) {
-        var target = event.target.id;
-        var value = event.target.value;
-        console.log("Input changed ", target, ": ", value);
-        var state = {};
-        state[target] = value;
-        this.setState(state);
+    componentDidMount: function() {
+        FactoryStore.bind(this._configurationChanged);
+        ConfigurationActionCreators.load();
     },
 
-    handleTextAreaChange: function(event) {
-        console.log("Textarea changed ", event.target.value);
-        this.setState({textAreaValue: event.target.value});
+    componentWillUnmount: function() {
+        FactoryStore.unbind(this._configurationChanged);
     },
 
-    handleSelectChange: function(event) {
-        console.log("Select changed ", event.target.value);
-        this.setState({selectValue: event.target.value});
+    _configurationChanged: function() {
+        this.setState(this._getConfiguration());
     },
 
-    renderField: function(id, label, field) {
+    _getConfiguration: function() {
+         var config = FactoryStore.getConfiguration();
+        config.Errors = {};
+        return config;
+    },
+
+    _isValid: function() {
+        var errors = {};
+
+        if (this.state.Line1MinRate < 10 || this.state.Line1MinRate > 100) {
+            errors["Line1MinRate"] = "Out of range [0-100].";
+        }
+
+        if (this.state.Line1MaxRate < 10 || this.state.Line1MaxRate > 100) {
+            errors["Line1MaxRate"] = "Out of range [0-100].";
+        }
+
+        if (this.state.Line2MinRate < 10 || this.state.Line2MinRate > 200) {
+            errors["Line2MinRate"] = "Out of range [0-200].";
+        }
+
+        if (this.state.Line2MaxRate < 10 || this.state.Line2MaxRate > 200) {
+            errors["Line2MaxRate"] = "Out of range [0=200].";
+        }
+
+        this.setState({Errors: errors});
+
+        // Return false if errors
+        for (var error in errors) {
+            return false;
+        }
+        return true;
+    },
+
+    _handleSubmitButtonClick: function(event) {
+        event.preventDefault();
+        if (this._isValid()) {
+            ConfigurationActionCreators.update(this.state);
+        } else {
+            // Re-render to show errors
+            this.forceUpdate();
+        }
+    },
+
+    _renderField: function(propName, label, field) {
+        // Render errors
+        var formGroupClass = "form-group";
+        var helpText;
+        if (propName in this.state.Errors) {
+            formGroupClass = "form-group has-error";
+            helpText = (<span className='help-block'>{this.state.Errors[propName]}</span>);
+        }
+
         return (
-            <div className="form-group">
-                <label htmlFor={id} className="col-md-4 control-label">{label}</label>
-                <div className="col-md-6">
-                    {field}
-                </div>
+            <div className={formGroupClass}>
+                <label className="control-label" propName={propName}>{label}</label>
+                {field}
+                {helpText}
             </div>
         );
     },
 
-    renderTextInput: function(id, label) {
-        var value = this.state[id];
-        return this.renderField(id, label,
-            <input type="text" className="form-control" id={id} value ={value} ref={id} onChange={this.handleInputChange} />
-        );
+    _renderTextInput: function(propName, label) {
+        var field = (<input type="text" className="form-control" valueLink={this.linkState(propName)} />);
+        return (this._renderField(propName, label, field));
     },
 
-    renderSelect: function(id, label) {
+    _renderTextArea: function(propName, label) {
+        var field = (<textarea name={propName} className="form-control" valueLink={this.linkState(propName)} />);
+        return (this._renderField(propName, label, field));
     },
 
     render: function() {
         return (
-            <div className="ConfigurationForm form-horizontal">
-                {this.renderTextInput('Line1MinRate', 'Line 1 Min. Rate')}
-                {this.renderTextInput('Line1MaxRate', 'Line 1 Max. Rate')}
+            <div className="ConfigurationForm">
+                <form>
+                    <div className="panel-body">
+                        <div className="well well-lg">
+                            {this._renderTextInput('Line1MinRate', 'Line 1 Max. Rate')}
+                            {this._renderTextInput('Line1MaxRate', 'Line 1 Max. Rate')}
+                            {this._renderTextArea('Line1Description', 'Line 1 Description')}
+                        </div>
 
-                {this.renderTextInput('Line2MinRate', 'Line 2 Min. Rate')}
-                {this.renderTextInput('Line2MaxRate', 'Line 2 Max. Rate')}
-
-                <input type="text" className="form-control" value={this.state.inputValue} onChange={this.handleInputChange} />
-                <textarea name="description" className="form-control" value={this.state.textAreaValue} onChange={this.handleTextAreaChange} />
-                <select className="form-control" value={this.state.selectValue} onChange={this.handleSelectChange}>
-                    <option value="A">Apple</option>
-                    <option value="B">Banana</option>
-                    <option value="C">Cranberry</option>
-                </select>
+                        <div className="well well-lg">
+                            {this._renderTextInput('Line2MinRate', 'Line 2 Min. Rate')}
+                            {this._renderTextInput('Line2MaxRate', 'Line 2 Max. Rate')}
+                            {this._renderTextArea('Line2Description', 'Line 2 Description')}
+                        </div>
+                    </div>
+                    <div className="panel-footer">
+                        <button type="button" className="btn btn-primary btn-block" onClick={this._handleSubmitButtonClick}>Submit</button>
+                    </div>
+                </form>
             </div>
         );
-    },
-
-    onSubmit: function(event) {
-        event.preventDefault();
-        var text = this.state.text.trim();
-        if (text) {
-            SeriesActionCreators.create(text);
-        }
     }
 });
 

@@ -2,7 +2,8 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
+var d3 = require("d3");
 
 var Chart = {
     width: 0,
@@ -76,17 +77,16 @@ var DefectTypePieChart = React.createClass({
             width: '200',
             height: '200'
         };
-        var data = this.getChartState();
+        var data = this._getChartState();
         Chart.createChart(el, props, data);
     },
 
     componentDidUpdate: function() {
         var el = this.getDOMNode();
-        Chart.updateChart(el, this.getChartState());
+        Chart.updateChart(el, this._getChartState());
     },
 
-    getChartState: function() {
-        console.log("getChartData ", this.props.data);
+    _getChartState: function() {
         return {
             data: this.props.data
         };

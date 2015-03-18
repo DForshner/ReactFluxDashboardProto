@@ -1,4 +1,4 @@
-// Line constants
+// Station detail constants
 
 "use strict";
 
@@ -7,7 +7,7 @@ var keyMirror = require('keymirror');
 module.exports = {
 
     ActionTypes: keyMirror({
-        GET_ALL_LINES: null
+        GET_DEFECT_DATA: null
     })
 
 };

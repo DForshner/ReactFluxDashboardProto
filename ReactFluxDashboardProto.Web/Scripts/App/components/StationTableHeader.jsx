@@ -2,9 +2,10 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 
 var StationTableHeader = React.createClass({
+
     render: function() {
         return (
             <thead className="StationTableHeader">
@@ -15,6 +16,7 @@ var StationTableHeader = React.createClass({
             </thead>
         );
     }
+
 });
 
 module.exports = StationTableHeader;

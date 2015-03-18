@@ -2,14 +2,16 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var Router = require('react-router');
 var FactoryStore = require("../stores/FactoryStore");
 var StationActionCreators = require('../actions/StationActionCreators');
 var StationTableHeader = require("./StationTableHeader.jsx");
 var StationTableBody = require("./StationTableBody.jsx");
+var Line = require('../domain/Line');
 
 var StationTable = React.createClass({
+
     mixins: [ Router.State ],
 
     stationsChanged: function() {
@@ -18,7 +20,9 @@ var StationTable = React.createClass({
 
     componentDidMount: function() {
         FactoryStore.bind(this.stationsChanged);
-        StationActionCreators.loadAll();
+
+        var line = new Line(this.getParams().lineId)
+        StationActionCreators.loadAll(line);
     },
 
     componentWillUnmount: function() {
@@ -26,14 +30,15 @@ var StationTable = React.createClass({
     },
 
     render: function() {
-        var stations = FactoryStore.getAllStations();
-        var lineId = this.getParams();
+        var line = new Line(this.getParams().lineId)
+        var stations = FactoryStore.getAllStations(line);
+
         return (
             <div className="StationTable">
-                <h4>Line {lineId} Stations</h4>
+                <h4>Line {line.LineId} Stations</h4>
                 <table className="table table-hover">
                     <StationTableHeader />
-                    <StationTableBody data={stations} />
+                    <StationTableBody line={line} stations={stations} />
                 </table>
             </div>
         );

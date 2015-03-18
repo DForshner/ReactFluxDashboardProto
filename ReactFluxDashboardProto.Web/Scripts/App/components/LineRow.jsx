@@ -2,7 +2,7 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
@@ -19,7 +19,7 @@ var LineRow = React.createClass({
         return (
             <tr>
                 <div className="LineRow">
-                    <td><Link to="line" params={{id: this.props.id}}>{this.props.name}</Link></td>
+                    <td><Link to="lineOverview" params={{lineId: this.props.id}}>{this.props.name}</Link></td>
                     <td>{this.props.total}</td>
                 </div>
             </tr>

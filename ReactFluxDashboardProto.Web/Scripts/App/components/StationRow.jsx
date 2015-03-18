@@ -2,14 +2,16 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
 
 var StationRow = React.createClass({
+
     propTypes: {
-        id: React.PropTypes.string.isRequired,
+        lineId: React.PropTypes.string.isRequired,
+        stationId: React.PropTypes.string.isRequired,
         name: React.PropTypes.string.isRequired,
         total: React.PropTypes.number.isRequired
     },
@@ -18,7 +20,7 @@ var StationRow = React.createClass({
         return (
             <tr>
                 <div className="StationRow">
-                    <td><Link to="station" params={{id: this.props.id}}>{this.props.name}</Link></td>
+                    <td><Link to="stationDetails" params={{lineId: this.props.lineId, stationId: this.props.stationId}}>{this.props.name}</Link></td>
                     <td>{this.props.total}</td>
                 </div>
             </tr>

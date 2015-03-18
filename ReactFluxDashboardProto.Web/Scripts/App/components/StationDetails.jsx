@@ -2,39 +2,40 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var Router = require('react-router');
 var DefectTypePieChart = require("./DefectTypePieChart.jsx");
+var FactoryStore = require("../stores/FactoryStore");
+var StationDetailsActionCreators = require('../actions/StationDetailsActionCreators');
+var Station = require('../domain/Station');
 
 var StationDetails = React.createClass({
+
     mixins: [ Router.State ],
 
-    loadLinesFromServer: function() {
-        var data = [
-            { Type: "Defect A", Count: 50 },
-            { Type: "Defect B", Count: 100 },
-            { Type: "Defect C", Count: 200 }
-        ];
-        this.setState({data: data});
-    },
-
-    getInitialState: function() {
-        return { data: [] };
+    _detailsChanged: function() {
+        this.forceUpdate();
     },
 
     componentDidMount: function() {
-        this.loadLinesFromServer();
+        FactoryStore.bind(this._detailsChanged);
+
+        var station = new Station(this.getParams().lineId, this.getParams().stationId);
+        StationDetailsActionCreators.loadDefectData(station);
+    },
+
+    componentWillUnmount: function() {
+        FactoryStore.unbind(this._detailsChanged);
     },
 
     render: function() {
-        var id = this.getParams();
-        console.log("data ", this.state.data);
-
+        var station = new Station(this.getParams().lineId, this.getParams().stationId);
+        var defects = FactoryStore.getStationDefects(station);
         return (
             <div className="StationDetails">
-                <h4>Station {id} Details</h4>
+                <h4>Line {station.LineId} Station {station.StationId} Details</h4>
                 <DefectTypePieChart
-                    data={this.state.data}
+                    data={defects}
                 />
             </div>
         );

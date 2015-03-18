@@ -2,9 +2,10 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 
 var LineTableHeader = React.createClass({
+
     render: function() {
         return (
             <thead className="LineTableHeader">
@@ -15,6 +16,7 @@ var LineTableHeader = React.createClass({
             </thead>
         );
     }
+
 });
 
 module.exports = LineTableHeader;

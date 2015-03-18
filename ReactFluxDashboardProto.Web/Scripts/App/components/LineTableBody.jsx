@@ -2,15 +2,20 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var LineRow = require("./LineRow.jsx");
 
 var LineTableBody = React.createClass({
+
+    propTypes: {
+        lines: React.PropTypes.array.isRequired
+    },
+
     render: function() {
-        var lines = this.props.data;
-        var rows = lines.map(function(line) {
+        var lines = this.props.lines;
+        var rows = lines.map(function(line, i) {
             return (
-                <LineRow id={line.Id} name={line.Name} total={line.Total}/>
+                <LineRow id={line.Id} name={line.Name} total={line.Total} key={i} />
             );
         });
         return (
@@ -19,6 +24,7 @@ var LineTableBody = React.createClass({
             </tbody>
         );
     }
+
 });
 
 module.exports = LineTableBody;

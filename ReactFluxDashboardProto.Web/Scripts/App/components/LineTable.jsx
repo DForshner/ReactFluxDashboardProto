@@ -2,7 +2,7 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var FactoryStore = require("../stores/FactoryStore");
 var LineActionCreators = require('../actions/LineActionCreators');
 var LineTableHeader = require("./LineTableHeader.jsx");
@@ -10,17 +10,17 @@ var LineTableBody = require("./LineTableBody.jsx");
 
 var LineTable = React.createClass({
 
-    linesChanged: function() {
+    _linesChanged: function() {
         this.forceUpdate();
     },
 
     componentDidMount: function() {
-        FactoryStore.bind(this.linesChanged);
+        FactoryStore.bind(this._linesChanged);
         LineActionCreators.loadAll();
     },
 
     componentWillUnmount: function() {
-        FactoryStore.unbind(this.linesChanged);
+        FactoryStore.unbind(this._linesChanged);
     },
 
     render: function() {
@@ -30,7 +30,7 @@ var LineTable = React.createClass({
                 <h4>Factory Overview</h4>
                 <table className="table table-hover">
                     <LineTableHeader />
-                    <LineTableBody data={lines} />
+                    <LineTableBody lines={lines} />
                 </table>
             </div>
         );

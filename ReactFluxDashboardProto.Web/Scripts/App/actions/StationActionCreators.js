@@ -1,17 +1,21 @@
+//
+
 "use strict";
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var StationConstants = require('../constants/StationConstants');
+var Line = require('../domain/Line');
 
-var StationActions = {
+var StationActionCreators = {
 
-  loadAll: function(){
-    AppDispatcher.dispatch({
-        action: StationConstants.ActionTypes.GET_ALL_STATIONS,
-        payload: {}
-    });
+  loadAll: function(line){
+      console.assert(line instanceof Line);
+
+      AppDispatcher.dispatch({
+          action: StationConstants.ActionTypes.GET_STATIONS,
+          payload: line
+      });
   }
-
 };
 
-module.exports = StationActions;
+module.exports = StationActionCreators;

@@ -117,21 +117,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\Vendor\bootstrap.css" />
-    <Content Include="Content\Vendor\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Ignore\Ignore everything in this directory.txt" />
-    <Content Include="Scripts\dashboardPrototypeBundle.js" />
     <Content Include="Scripts\Vendor\bootstrap.js" />
     <Content Include="Scripts\Vendor\bootstrap.min.js" />
-    <Content Include="Scripts\Vendor\d3.js" />
-    <Content Include="Scripts\Vendor\d3.min.js" />
-    <Content Include="Scripts\Vendor\jquery-1.10.2.js" />
-    <Content Include="Scripts\Vendor\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\Vendor\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\dashboardPrototypeBundle.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\Vendor\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\Vendor\jquery-1.9.1.js" />
+    <Content Include="Scripts\Vendor\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Vendor\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Scripts\Vendor\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\LinesController.cs" />
@@ -152,7 +160,6 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\LayoutPage.cshtml" />
-    <None Include="Scripts\Vendor\jquery-1.10.2.intellisense.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

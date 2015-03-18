@@ -2,14 +2,22 @@
 
 "use strict";
 
-var React = require("React");
+var React = require("React/addons");
 var StationRow = require("./StationRow.jsx");
+var Line = require('../domain/Line');
 
 var StationTableBody = React.createClass({
+
+    propTypes: {
+        stations: React.PropTypes.array.isRequired,
+        line: React.PropTypes.instanceOf(Line).isRequired
+    },
+
     render: function() {
-        var rows = this.props.data.map(function(line, index) {
+        var line = this.props.line;
+        var rows = this.props.stations.map(function(station, index) {
             return (
-                <StationRow id={line.Id} name={line.Name} total={line.Total} key={index}/>
+                <StationRow lineId={line.LineId} stationId={station.Id} name={station.Name} total={station.Total} key={index}/>
             );
         });
         return (
