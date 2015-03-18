@@ -1,0 +1,2 @@
+
+jest.dontMock('../FactoryStore.js');
