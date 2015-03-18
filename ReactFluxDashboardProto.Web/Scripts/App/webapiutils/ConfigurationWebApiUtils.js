@@ -2,23 +2,36 @@
 
 "use strict";
 
+/** @const */
+var URL = "";
+
+var _fakeData = {
+    Line1MinRate: 10,
+    Line1MaxRate: 100,
+    Line1Description: "",
+
+    Line2MinRate: 10,
+    Line2MaxRate: 100,
+    Line2Description: ""
+};
+
 var ConfigurationWebApiUtils = {
 
-    getConfiguration: function( successCallback ) {
-        var data = {
-            Line1MinRate: 10,
-            Line1MaxRate: 100,
-            Line1Description: "",
-            Line1AlarmType: "",
+    getConfiguration: function(callback) {
+        console.assert(typeof callback === 'function')
 
-            Line2MinRate: 10,
-            Line2MaxRate: 100,
-            Line2Description: "",
-            Line2AlarmType: ""
-        };
-        successCallback(data);
+        var err = {};
+        callback(err, _fakeData);
+    },
+
+    updateConfiguration: function(updatedConfig, callback) {
+        console.assert(typeof callback === 'function')
+
+        _fakeData = updatedConfig;
+
+        var err = {};
+        callback(err, _fakeData);
     }
-
 };
 
 module.exports = ConfigurationWebApiUtils;

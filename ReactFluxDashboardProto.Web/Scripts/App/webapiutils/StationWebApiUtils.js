@@ -2,16 +2,25 @@
 
 "use strict";
 
+var Line = require('../domain/Line');
+
+/** @const */
+var URL = "";
+
 var StationWebApiUtils = {
 
-    getAllStations: function( successCallback ) {
-        console.assert(typeof successCallback === 'function')
+    getStations: function(line, callback) {
+        console.assert(line instanceof Line);
+        console.assert(typeof callback === 'function')
 
         var data = [
             { Id: "A", Name: "Station A", Total:50 },
             { Id: "B", Name: "Station B", Total:100 }
         ];
-        successCallback(data);
+
+        var err = {};
+        var data = { line: line, stations: data };
+        callback(err, data);
     }
 
 };
