@@ -1,18 +1,4 @@
-﻿/* NUGET: BEGIN LICENSE TEXT
- *
- * Microsoft grants you the right to use these script files for the sole
- * purpose of either: (i) interacting through your browser with the Microsoft
- * website or online service, subject to the applicable licensing or use
- * terms; or (ii) using the files as included with a Microsoft product subject
- * to that product's license terms. Microsoft reserves all other rights to the
- * files not expressly granted by Microsoft, whether by implication, estoppel
- * or otherwise. Insofar as a script file is dual licensed under GPL,
- * Microsoft neither took the code under GPL nor distributes it thereunder but
- * under the terms set out in this paragraph. All notices and licenses
- * below are for informational purposes only.
- *
- * NUGET: END LICENSE TEXT */
-intellisense.annotate(jQuery, {
+﻿intellisense.annotate(jQuery, {
   'ajax': function() {
     /// <signature>
     ///   <summary>Perform an asynchronous HTTP (Ajax) request.</summary>
@@ -2096,7 +2082,7 @@ intellisense.annotate(jQuery.fn, {
   },
   'promise': function() {
     /// <signature>
-    ///   <summary>Return a Promise object to observe when all actionCreators of a certain type bound to the collection, queued or not, have finished.</summary>
+    ///   <summary>Return a Promise object to observe when all actions of a certain type bound to the collection, queued or not, have finished.</summary>
     ///   <param name="type" type="String">The type of queue that needs to be observed.</param>
     ///   <param name="target" type="PlainObject">Object onto which the promise methods have to be attached</param>
     ///   <returns type="Promise" />
