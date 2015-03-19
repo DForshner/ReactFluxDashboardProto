@@ -5,9 +5,10 @@ using System.Web;
 
 namespace ReactFluxDashboardProto.Web.Ignore
 {
-    public class StationDto
+    public class LineStatusDto
     {
+        public string LineId { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
+        public int Total { get; set; }
     }
 }

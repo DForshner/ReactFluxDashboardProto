@@ -2,35 +2,56 @@
 
 "use strict";
 
+var DashboardConfiguration = require('../domain/DashboardConfiguration');
+var Mapper = require('../infrastructure/Mapper');
+var ConnectionError = require('../infrastructure/ConnectionError');
+var URLBuilder = require('../infrastructure/URLBuilder');
+var $ = require('jquery');
+
 /** @const */
-var URL = "";
-
-var _fakeData = {
-    Line1MinRate: 10,
-    Line1MaxRate: 100,
-    Line1Description: "",
-
-    Line2MinRate: 10,
-    Line2MaxRate: 100,
-    Line2Description: ""
-};
+var ROUTE = "/api/dashboardconfiguration/";
 
 var ConfigurationWebApiUtils = {
 
     getConfiguration: function(callback) {
         console.assert(typeof callback === 'function')
 
-        var err = {};
-        callback(err, _fakeData);
+        var url = URLBuilder.build(ROUTE);
+
+        $.ajax({
+            url: url
+        }).done(function(response) {
+            var str = JSON.stringify(response);
+            var config = Mapper.mapTo(DashboardConfiguration, str);
+            callback(null, config);
+        }).error(function(error) {
+            // Always pass back a custom Error type
+            callback(ConnectionError.createFromResponse(error), null);
+        });
     },
 
     updateConfiguration: function(updatedConfig, callback) {
+        console.assert(updatedConfig instanceof DashboardConfiguration);
         console.assert(typeof callback === 'function')
 
-        _fakeData = updatedConfig;
+        var url = URLBuilder.build(ROUTE);
 
-        var err = {};
-        callback(err, _fakeData);
+        var payload = JSON.stringify(updatedConfig);
+
+        $.ajax({
+            url: url,
+            method: "PUT",
+            dataType: 'json',
+            contentType: 'application/json',
+            data: payload
+        }).done(function(response) {
+            var str = JSON.stringify(response);
+            var config = Mapper.mapTo(DashboardConfiguration, str);
+            callback(null, config);
+        }).error(function(error) {
+            // Always pass back a custom Error type
+            callback(ConnectionError.createFromResponse(error), null);
+        });
     }
 };
 

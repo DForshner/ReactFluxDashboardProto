@@ -3,9 +3,14 @@
 "use strict";
 
 var Line = require('../domain/Line');
+var StationStatus = require('../domain/StationStatus');
+var Mapper = require('../infrastructure/Mapper');
+var ConnectionError = require('../infrastructure/ConnectionError');
+var URLBuilder = require('../infrastructure/URLBuilder');
+var $ = require('jquery');
 
 /** @const */
-var URL = "";
+var ROUTE = "/api/stationstatuses/";
 
 var StationWebApiUtils = {
 
@@ -13,14 +18,17 @@ var StationWebApiUtils = {
         console.assert(line instanceof Line);
         console.assert(typeof callback === 'function')
 
-        var data = [
-            { Id: "A", Name: "Station A", Total:50 },
-            { Id: "B", Name: "Station B", Total:100 }
-        ];
+        var url = URLBuilder.build(ROUTE, { lineId: line.LineId });
 
-        var err = {};
-        var data = { line: line, stations: data };
-        callback(err, data);
+        $.ajax({
+            url: url
+        }).done(function(response) {
+            var str = JSON.stringify(response);
+            var stationStatuses = Mapper.mapToArray(StationStatus, str);
+            callback(null, stationStatuses);
+        }).error(function(response) {
+            callback(ConnectionError.createFromResponse(response), null);
+        });
     }
 
 };

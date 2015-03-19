@@ -1,18 +1,20 @@
 // Configure the dashboard.
+// Example of a stateful component which hold the state of the view until it's
+// ready to update the application state by triggering an update action.
+//
+// Stateful components can have 3 kinds of states: initial state, user input state, and data store state.
 
 "use strict";
 
 var React = require("React/addons");
 var FactoryStore = require("../stores/FactoryStore");
 var ConfigurationActionCreators = require('../actions/ConfigurationActionCreators');
+var DashboardConfiguration = require('../domain/DashboardConfiguration');
+var _ = require('lodash');
 
 var ConfigurationForm = React.createClass({
 
     mixins: [React.addons.LinkedStateMixin],
-
-    getInitialState: function() {
-        return this._getConfiguration();
-    },
 
     componentDidMount: function() {
         FactoryStore.bind(this._configurationChanged);
@@ -24,47 +26,24 @@ var ConfigurationForm = React.createClass({
     },
 
     _configurationChanged: function() {
-        this.setState(this._getConfiguration());
-    },
+        var config = FactoryStore.getConfiguration();
+        console.assert(config instanceof DashboardConfiguration);
 
-    _getConfiguration: function() {
-         var config = FactoryStore.getConfiguration();
         config.Errors = {};
-        return config;
-    },
-
-    _isValid: function() {
-        var errors = {};
-
-        if (this.state.Line1MinRate < 10 || this.state.Line1MinRate > 100) {
-            errors["Line1MinRate"] = "Out of range [0-100].";
-        }
-
-        if (this.state.Line1MaxRate < 10 || this.state.Line1MaxRate > 100) {
-            errors["Line1MaxRate"] = "Out of range [0-100].";
-        }
-
-        if (this.state.Line2MinRate < 10 || this.state.Line2MinRate > 200) {
-            errors["Line2MinRate"] = "Out of range [0-200].";
-        }
-
-        if (this.state.Line2MaxRate < 10 || this.state.Line2MaxRate > 200) {
-            errors["Line2MaxRate"] = "Out of range [0=200].";
-        }
-
-        this.setState({Errors: errors});
-
-        // Return false if errors
-        for (var error in errors) {
-            return false;
-        }
-        return true;
+        this.setState(config);
     },
 
     _handleSubmitButtonClick: function(event) {
         event.preventDefault();
-        if (this._isValid()) {
-            ConfigurationActionCreators.update(this.state);
+        console.log("Submitting form");
+
+        var config = DashboardConfiguration.createFrom(this.state);
+
+        var errors = config.getErrors();
+        this.setState({Errors: errors});
+
+        if (_.isEmpty(errors)) {
+            ConfigurationActionCreators.update(config);
         } else {
             // Re-render to show errors
             this.forceUpdate();
@@ -100,8 +79,12 @@ var ConfigurationForm = React.createClass({
     },
 
     render: function() {
+        if (this.state === null) {
+            return (<div></div>);
+        }
+
         return (
-            <div className="ConfigurationForm">
+            <div className="ConfigurationForm panel panel-default">
                 <form>
                     <div className="panel-body">
                         <div className="well well-lg">

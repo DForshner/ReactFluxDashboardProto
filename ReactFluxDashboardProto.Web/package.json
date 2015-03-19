@@ -22,7 +22,7 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "~3.3.4",
+    "lodash": "~3.5.0",
     "browserify": "^7.0.2",
     "browserify-shim": "^3.8.1",
     "gulp": "^3.8.10",

@@ -142,17 +142,21 @@
     <Content Include="Scripts\Vendor\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\LinesController.cs" />
-    <Compile Include="Api\StationsController.cs" />
+    <Compile Include="Api\DashboardConfigurationsController.cs" />
+    <Compile Include="Api\StationDefectCountsController.cs" />
+    <Compile Include="Api\LineStatusesController.cs" />
+    <Compile Include="Api\StationStatusesController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Ignore\LineDto.cs" />
+    <Compile Include="Ignore\DashboardConfigurationDto.cs" />
+    <Compile Include="Ignore\LineStatusDto.cs" />
     <Compile Include="Ignore\ScriptRunner.cs" />
-    <Compile Include="Ignore\StationDto.cs" />
+    <Compile Include="Ignore\StationDefectCountDto.cs" />
+    <Compile Include="Ignore\StationStatusDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

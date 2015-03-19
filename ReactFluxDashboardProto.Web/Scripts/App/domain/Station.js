@@ -3,16 +3,15 @@
 "use strict";
 
 // Private
-var stationCount = 0;
+var _stationCount = 0;
 
-function increaseCount() {
-    stationCount++;
+function _increaseCount() {
+    _stationCount++;
 }
 
 // Public
 module.exports = Station;
 
-// Constructor
 function Station(lineId, stationId) {
     console.assert(typeof lineId === "string");
     console.assert(typeof stationId === "string");
@@ -20,7 +19,7 @@ function Station(lineId, stationId) {
     this.LineId = lineId;
     this.StationId = stationId;
 
-    increaseCount();
+    _increaseCount();
 }
 
 // Not the greatest hashcode

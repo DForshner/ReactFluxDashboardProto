@@ -10,6 +10,7 @@ var ConfigurationConstants = {
         LOAD: null,
         UPDATE: null
     })
+
 };
 
 module.exports = ConfigurationConstants;

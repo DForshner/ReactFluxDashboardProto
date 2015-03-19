@@ -1,4 +1,5 @@
 // List of all production lines
+// Note: Stateless renderer component - Only contains logic to render DOM elements.
 
 "use strict";
 
@@ -8,14 +9,14 @@ var LineRow = require("./LineRow.jsx");
 var LineTableBody = React.createClass({
 
     propTypes: {
-        lines: React.PropTypes.array.isRequired
+        lineStatuses: React.PropTypes.array.isRequired
     },
 
     render: function() {
-        var lines = this.props.lines;
-        var rows = lines.map(function(line, i) {
+        var lineStatuses = this.props.lineStatuses;
+        var rows = lineStatuses.map(function(lineStatus, i) {
             return (
-                <LineRow id={line.Id} name={line.Name} total={line.Total} key={i} />
+                <LineRow lineStatus={lineStatus} key={i} />
             );
         });
         return (

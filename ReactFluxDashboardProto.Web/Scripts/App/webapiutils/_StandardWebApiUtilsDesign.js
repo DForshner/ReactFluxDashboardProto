@@ -7,21 +7,35 @@ var ConnectionError = require('../Infrastructure/ConnectionError');
 // Store route urls as private variables in the WebAPIUtils.  The rest of the app has no
 // reason to know about how to access API data.
 /** @const */
-var URL = "";
+var ROUTE = "/api/businessthings/";
 
 var _StandardWebApiUtilsDesign = {
 
-    getSomething: function(callback) {
+    getBusinessThings: function(callback) {
         console.assert(typeof callback === 'function');
 
-        var data = {}; // Get some data from an external API
+        var url = URLBuilder.build(ROUTE);
 
-        var ok = true;
-        var err = (ok) ? null : new ConnectionError("Something bad happened to the internet.");
+        if (!$.ajax({
+                url: url
+            }).done(function (response) {
 
-        // Async callbacks adopt Node's error first callback standard.
-        // Note: We aren't throwing exceptions around we are passing them as arguments.
-        callback(err, data);
+                // Parse the strings into some kind of meaningful domain type.
+                var str = JSON.stringify(response);
+                var importantBusinessThings = Mapper.mapToArray(importantBusinessThing, str);
+
+                // Don't just pass strings of arrays of strings of string strings arrays
+                // into business logic!  Dynamically typed languages still have types!
+                callback(null, importantBusinessThings);
+            }).error(function (error) {
+
+                // Async callbacks adopt Node's error first callback standard.
+                // Note: We aren't throwing exceptions around we are passing them as arguments.
+                // When an error occurs always pass back a custom Error type. Don't let HTTP
+                // related details leak into business logic! P.S. Don't pass strings!
+                callback(ConnectionError.createFromResponse(error), null);
+            })) {
+        }
     }
 
 };

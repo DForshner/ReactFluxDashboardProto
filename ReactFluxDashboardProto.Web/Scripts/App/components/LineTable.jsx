@@ -5,8 +5,11 @@
 var React = require("React/addons");
 var FactoryStore = require("../stores/FactoryStore");
 var LineActionCreators = require('../actions/LineActionCreators');
+
 var LineTableHeader = require("./LineTableHeader.jsx");
 var LineTableBody = require("./LineTableBody.jsx");
+
+var ErrorTable = require("./ErrorTable.jsx");
 
 var LineTable = React.createClass({
 
@@ -24,14 +27,23 @@ var LineTable = React.createClass({
     },
 
     render: function() {
-        var lines = FactoryStore.getAllLines();
+        var errors;
+        if (FactoryStore.hasErrors()) {
+            errors = (
+                <ErrorTable errors={FactoryStore.getErrors()} />
+            );
+        }
+
+        var lineStatues = FactoryStore.getAllLines();
         return (
             <div className="LineTable">
                 <h4>Factory Overview</h4>
                 <table className="table table-hover">
                     <LineTableHeader />
-                    <LineTableBody lines={lines} />
+                    <LineTableBody lineStatuses={lineStatues} />
                 </table>
+
+                {errors}
             </div>
         );
     }

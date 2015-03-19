@@ -4,10 +4,12 @@
 
 var keyMirror = require('keymirror');
 
-module.exports = {
+var StationConstants = {
 
     ActionTypes: keyMirror({
         GET_STATIONS: null
     })
 
 };
+
+module.exports = StationConstants;

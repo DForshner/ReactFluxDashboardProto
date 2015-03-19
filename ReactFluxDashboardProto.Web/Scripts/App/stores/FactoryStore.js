@@ -3,11 +3,18 @@
 // for events from the dispatcher and emits events to the
 // event emitter.
 
+// Stores that are part of one section of your application should be contained within a single store.
+// Think of them like pages of your webapp, a modal or some other contained section.
+
 "use strict";
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
+
+var ErrorStore = require('../stores/ErrorStore');
+
+var ErrorConstants = require('../constants/ErrorConstants');
 
 var LineConstants = require('../constants/LineConstants');
 var LineWebApiUtils = require('../webapiutils/LineWebApiUtils');
@@ -24,29 +31,32 @@ var ConfigurationWebApiUtils = require('../webapiutils/ConfigurationWebApiUtils'
 var Station = require('../domain/Station');
 var Line = require('../domain/Line');
 
-// Private data/models
-
 /** @const */
 var CHANGED_EVENT = "FACTORYSTORE_CHANGED";
 
-var lines = [];
-var stations = [];
-var stationDefects = [];
-var configuration = {};
-var errors = [];
+// Private
+var _lines = [];
+var _stations = [];
+var _stationDefects = [];
+var _configuration = null;
+var _errors = [];
+
+function _clearErrors() {
+    _errors.length = 0;
+}
 
 // Public
 var FactoryStore = assign({}, EventEmitter.prototype, {
 
     // ------------------------------------------ Accessor methods
 
-    getAllLines: function() { return lines; },
+    getAllLines: function() { return _lines; },
 
     getAllStations: function(line) {
         console.assert(line instanceof Line);
 
-        if (stations.hasOwnProperty(line.getHashCode())) {
-            return stations[line.getHashCode()];
+        if (_stations.hasOwnProperty(line.getHashCode())) {
+            return _stations[line.getHashCode()];
         }
 
         return [];
@@ -55,8 +65,8 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
     getStationDefects: function(station) {
         console.assert(station instanceof Station);
 
-        if (stationDefects.hasOwnProperty(station.getHashCode())) {
-            return stationDefects[station.getHashCode()];
+        if (_stationDefects.hasOwnProperty(station.getHashCode())) {
+            return _stationDefects[station.getHashCode()];
         }
 
         return [];
@@ -64,11 +74,14 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
 
     getConfiguration: function() { return configuration; },
 
-    getErrors: function() { return errors; },
+    hasErrors: function() { return _errors.length > 0; },
+
+    getErrors: function() { return _errors; },
 
     // ------------------------------------------ Event methods
 
     emitChange: function() {
+        console.log("Errors: ", _errors);
         this.emit(CHANGED_EVENT);
     },
 
@@ -93,39 +106,41 @@ AppDispatcher.register(function(event) {
         console.log("Action: ", action, " Payload: ", event.payload);
     }
 
+    // TODO: WebAPIUtils should be dispatching data via action creators not pushing directly into the datastore like this.
+
     switch( action ) {
         case LineConstants.ActionTypes.GET_ALL_LINES:
             LineWebApiUtils.getAllLines(function(err, data) {
                 if (err) {
-                    console.log("TODO: handle this", err.message);
-                    return;
+                    _errors.push(err);
+                } else {
+                    _lines = data;
                 }
 
-                lines = data;
                 FactoryStore.emitChange();
             } );
             break;
 
         case StationConstants.ActionTypes.GET_STATIONS:
-            StationWebApiUtils.getStations(event.payload, function(err, data) {
+            var line = event.payload;
+            StationWebApiUtils.getStations(line, function(err, data) {
                 if (err) {
-                    console.log("TODO: handle this", err.message);
-                    return;
+                    _errors.push(err);
+                } else {
+                    _stations[line.getHashCode()] = data;
                 }
-
-                stations[data.line.getHashCode()] = data.stations;
                 FactoryStore.emitChange();
             } );
             break;
 
         case StationDetailConstants.ActionTypes.GET_DEFECT_DATA:
-            StationDetailWebApiUtils.getDefectData(event.payload, function(err, data) {
+            var station = event.payload;
+            StationDetailWebApiUtils.getDefectData(station, function(err, data) {
                 if (err) {
-                    console.log("TODO: handle this", err.message);
-                    return;
+                    _errors.push(err);
+                } else {
+                    _stationDefects[station.getHashCode()] = data;
                 }
-
-                stationDefects[data.station.getHashCode()] = data.defects;
                 FactoryStore.emitChange();
             } );
             break;
@@ -133,25 +148,29 @@ AppDispatcher.register(function(event) {
         case ConfigurationConstants.ActionTypes.LOAD:
             ConfigurationWebApiUtils.getConfiguration(function(err, data) {
                 if (err) {
-                    console.log("TODO: handle this", err.message);
-                    return;
+                    _errors.push(err);
+                } else {
+                    _configuration = data;
                 }
-
-                configuration = data;
                 FactoryStore.emitChange();
             } );
             break;
 
         case ConfigurationConstants.ActionTypes.UPDATE:
-            ConfigurationWebApiUtils.updateConfiguration(event.payload, function(err, data) {
+            var updatedConfig = event.payload;
+            ConfigurationWebApiUtils.updateConfiguration(updatedConfig, function(err, data) {
                 if (err) {
-                    console.log("TODO: handle this", err.message);
-                    return;
+                    _errors.push(err);
+                } else {
+                    _configuration = data;
                 }
-
-                configuration = data;
                 FactoryStore.emitChange();
             });
+            break;
+
+        case ErrorConstants.ActionTypes.CLEAR:
+            _clearErrors();
+            FactoryStore.emitChange();
             break;
     }
 

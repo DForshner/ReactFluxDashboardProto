@@ -14,3 +14,7 @@ function ConnectionError(message) {
 // Inherit from the Error constructor
 ConnectionError.prototype = Object.create(Error.prototype);
 ConnectionError.prototype.constructor = ConnectionError;
+
+ConnectionError.createFromResponse = function(response) {
+    return new ConnectionError(response.statusText);
+};

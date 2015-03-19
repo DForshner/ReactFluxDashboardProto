@@ -3,15 +3,14 @@
 "use strict";
 
 var Station = require('../domain/Station');
+var StationDefectCount = require('../domain/StationDefectCount');
+var Mapper = require('../infrastructure/Mapper');
+var ConnectionError = require('../infrastructure/ConnectionError');
+var URLBuilder = require('../infrastructure/URLBuilder');
+var $ = require('jquery');
 
 /** @const */
-var URL = "";
-
-var _data = [
-    { Type: "Defect A", Count: 50 },
-    { Type: "Defect B", Count: 100 },
-    { Type: "Defect C", Count: 200 }
-];
+var ROUTE = "/api/stationdefectcounts/";
 
 var StationDetailWebApiUtils = {
 
@@ -19,13 +18,18 @@ var StationDetailWebApiUtils = {
         console.assert(station instanceof Station);
         console.assert(typeof callback === 'function');
 
-        console.log("Getting defect data for ", station.LineId, " ", station.StationId);
+        var url = URLBuilder.build(ROUTE, { lineId: station.LineId, stationId: station.StationId });
 
-        var err = {};
-        var data = { station: station, defects: _data.concat({ Type: "Defect " + station.StationId, Count: 50 }) };
-        callback(err ,data);
+        $.ajax({
+            url: url
+        }).done(function(response) {
+            var str = JSON.stringify(response);
+            var defects = Mapper.mapToArray(StationDefectCount, str);
+            callback(null, defects);
+        }).error(function(response) {
+            callback(ConnectionError.createFromResponse(response), null);
+        });
     }
-
 };
 
 module.exports = StationDetailWebApiUtils;

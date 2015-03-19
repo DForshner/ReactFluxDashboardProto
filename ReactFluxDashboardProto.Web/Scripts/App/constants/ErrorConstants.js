@@ -4,12 +4,12 @@
 
 var keyMirror = require('keymirror');
 
-var LineConstants = {
+var ErrorConstants = {
 
     ActionTypes: keyMirror({
-        GET_ALL_LINES: null
+        CLEAR: null
     })
 
 };
 
-module.exports = LineConstants;
+module.exports = ErrorConstants;

@@ -31,14 +31,14 @@ var StationTable = React.createClass({
 
     render: function() {
         var line = new Line(this.getParams().lineId)
-        var stations = FactoryStore.getAllStations(line);
+        var stationStatuses = FactoryStore.getAllStations(line);
 
         return (
             <div className="StationTable">
                 <h4>Line {line.LineId} Stations</h4>
                 <table className="table table-hover">
                     <StationTableHeader />
-                    <StationTableBody line={line} stations={stations} />
+                    <StationTableBody line={line} stationStatuses={stationStatuses} />
                 </table>
             </div>
         );

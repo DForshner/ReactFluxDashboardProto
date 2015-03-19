@@ -1,4 +1,5 @@
 // Details of a single production line.
+// Note: Stateless renderer component - Only contains logic to render DOM elements.
 
 "use strict";
 
@@ -6,21 +7,20 @@ var React = require("React/addons");
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Link = Router.Link;
+var LineStatus = require('../domain/LineStatus');
 
 var LineRow = React.createClass({
 
     propTypes: {
-        id: React.PropTypes.string.isRequired,
-        name: React.PropTypes.string.isRequired,
-        total: React.PropTypes.number.isRequired
+        lineStatus: React.PropTypes.instanceOf(LineStatus).isRequired
     },
 
     render: function() {
         return (
             <tr>
                 <div className="LineRow">
-                    <td><Link to="lineOverview" params={{lineId: this.props.id}}>{this.props.name}</Link></td>
-                    <td>{this.props.total}</td>
+                    <td><Link to="lineOverview" params={{lineId: this.props.lineStatus.LineId}}>{this.props.lineStatus.Name}</Link></td>
+                    <td>{this.props.lineStatus.Total}</td>
                 </div>
             </tr>
         );

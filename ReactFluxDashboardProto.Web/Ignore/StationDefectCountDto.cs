@@ -5,9 +5,9 @@ using System.Web;
 
 namespace ReactFluxDashboardProto.Web.Ignore
 {
-    public class LineDto
+    public class StationDefectCountDto
     {
-        public string Name { get; set; }
         public string Type { get; set; }
+        public int Count { get; set; }
     }
 }
