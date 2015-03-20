@@ -6,6 +6,8 @@ var Line = require('../domain/Line');
 var StationStatus = require('../domain/StationStatus');
 var Mapper = require('../infrastructure/Mapper');
 var ConnectionError = require('../infrastructure/ConnectionError');
+var ServerActionCreators = require('../actions/ServerActionCreators');
+var ErrorActionCreators = require('../actions/ErrorActionCreators');
 var URLBuilder = require('../infrastructure/URLBuilder');
 var $ = require('jquery');
 
@@ -14,9 +16,8 @@ var ROUTE = "/api/stationstatuses/";
 
 var StationWebApiUtils = {
 
-    getStations: function(line, callback) {
+    getStationStatuses: function(line) {
         console.assert(line instanceof Line);
-        console.assert(typeof callback === 'function')
 
         var url = URLBuilder.build(ROUTE, { lineId: line.LineId });
 
@@ -25,9 +26,10 @@ var StationWebApiUtils = {
         }).done(function(response) {
             var str = JSON.stringify(response);
             var stationStatuses = Mapper.mapToArray(StationStatus, str);
-            callback(null, stationStatuses);
+            ServerActionCreators.receivedStationStatuses(line, stationStatuses);
         }).error(function(response) {
-            callback(ConnectionError.createFromResponse(response), null);
+            var error = ConnectionError.createFromResponse(response);
+            ErrorActionCreators.add(error);
         });
     }
 

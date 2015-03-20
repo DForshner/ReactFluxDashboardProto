@@ -11,22 +11,12 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-
-var ErrorStore = require('../stores/ErrorStore');
-
-var ErrorConstants = require('../constants/ErrorConstants');
+var Map = require('immutable').Map;
 
 var LineConstants = require('../constants/LineConstants');
-var LineWebApiUtils = require('../webapiutils/LineWebApiUtils');
-
 var StationConstants = require('../constants/StationConstants');
-var StationWebApiUtils = require('../webapiutils/StationWebApiUtils');
-
 var StationDetailConstants = require('../constants/StationDetailConstants');
-var StationDetailWebApiUtils = require('../webapiutils/StationDetailWebApiUtils');
-
 var ConfigurationConstants = require('../constants/ConfigurationConstants');
-var ConfigurationWebApiUtils = require('../webapiutils/ConfigurationWebApiUtils');
 
 var Station = require('../domain/Station');
 var Line = require('../domain/Line');
@@ -34,18 +24,11 @@ var Line = require('../domain/Line');
 /** @const */
 var CHANGED_EVENT = "FACTORYSTORE_CHANGED";
 
-// Private
 var _lines = [];
-var _stations = [];
-var _stationDefects = [];
+var _stations = Map();
+var _stationDefects = Map();
 var _configuration = null;
-var _errors = [];
 
-function _clearErrors() {
-    _errors.length = 0;
-}
-
-// Public
 var FactoryStore = assign({}, EventEmitter.prototype, {
 
     // ------------------------------------------ Accessor methods
@@ -55,8 +38,8 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
     getAllStations: function(line) {
         console.assert(line instanceof Line);
 
-        if (_stations.hasOwnProperty(line.getHashCode())) {
-            return _stations[line.getHashCode()];
+        if (_stations.has(line.getHashCode())) {
+            return _stations.get(line.getHashCode());
         }
 
         return [];
@@ -65,23 +48,19 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
     getStationDefects: function(station) {
         console.assert(station instanceof Station);
 
-        if (_stationDefects.hasOwnProperty(station.getHashCode())) {
-            return _stationDefects[station.getHashCode()];
+        if (_stationDefects.has(station.getHashCode())) {
+            return _stationDefects.get(station.getHashCode());
         }
 
         return [];
     },
 
-    getConfiguration: function() { return configuration; },
-
-    hasErrors: function() { return _errors.length > 0; },
-
-    getErrors: function() { return _errors; },
+    getConfiguration: function() { return _configuration; },
 
     // ------------------------------------------ Event methods
 
     emitChange: function() {
-        console.log("Errors: ", _errors);
+        console.log("Emit changed event");
         this.emit(CHANGED_EVENT);
     },
 
@@ -97,81 +76,49 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
 });
 
 // Configure store to respond to events dispatched by views.
-AppDispatcher.register(function(event) {
+FactoryStore.dispatchToken = AppDispatcher.register(function(event) {
     var action = event.action;
 
     if (typeof action === "undefined") {
-        console.log("Undefined action: check constant ActionTypes");
-    } else {
-        console.log("Action: ", action, " Payload: ", event.payload);
+        console.log("Undefined action: check that ActionTypes constants are correct");
+        return true;
     }
 
-    // TODO: WebAPIUtils should be dispatching data via action creators not pushing directly into the datastore like this.
+    console.log("Action: ", action, " Payload: ", event.payload);
 
     switch( action ) {
-        case LineConstants.ActionTypes.GET_ALL_LINES:
-            LineWebApiUtils.getAllLines(function(err, data) {
-                if (err) {
-                    _errors.push(err);
-                } else {
-                    _lines = data;
-                }
 
-                FactoryStore.emitChange();
-            } );
-            break;
-
-        case StationConstants.ActionTypes.GET_STATIONS:
-            var line = event.payload;
-            StationWebApiUtils.getStations(line, function(err, data) {
-                if (err) {
-                    _errors.push(err);
-                } else {
-                    _stations[line.getHashCode()] = data;
-                }
-                FactoryStore.emitChange();
-            } );
-            break;
-
-        case StationDetailConstants.ActionTypes.GET_DEFECT_DATA:
-            var station = event.payload;
-            StationDetailWebApiUtils.getDefectData(station, function(err, data) {
-                if (err) {
-                    _errors.push(err);
-                } else {
-                    _stationDefects[station.getHashCode()] = data;
-                }
-                FactoryStore.emitChange();
-            } );
-            break;
-
-        case ConfigurationConstants.ActionTypes.LOAD:
-            ConfigurationWebApiUtils.getConfiguration(function(err, data) {
-                if (err) {
-                    _errors.push(err);
-                } else {
-                    _configuration = data;
-                }
-                FactoryStore.emitChange();
-            } );
-            break;
-
-        case ConfigurationConstants.ActionTypes.UPDATE:
-            var updatedConfig = event.payload;
-            ConfigurationWebApiUtils.updateConfiguration(updatedConfig, function(err, data) {
-                if (err) {
-                    _errors.push(err);
-                } else {
-                    _configuration = data;
-                }
-                FactoryStore.emitChange();
-            });
-            break;
-
-        case ErrorConstants.ActionTypes.CLEAR:
-            _clearErrors();
+        case LineConstants.ActionTypes.RECEIVED_LINE_STATUSES:
+            _lines = event.payload;
             FactoryStore.emitChange();
             break;
+
+        case StationConstants.ActionTypes.RECEIVED_STATION_STATUSES:
+            var line = event.context;
+            var stationStatuses = event.payload;
+            _stations = _stations.set(line.getHashCode(), stationStatuses);
+            FactoryStore.emitChange();
+            break;
+
+        case StationDetailConstants.ActionTypes.RECEIVED_DEFECT_DATA:
+            var station = event.context;
+            var defects = event.payload;
+            _stationDefects = _stationDefects.set(station.getHashCode(), defects);
+            FactoryStore.emitChange();
+            break;
+
+        case ConfigurationConstants.ActionTypes.LOADED:
+            _configuration = event.payload;
+            FactoryStore.emitChange();
+            break;
+
+        case ConfigurationConstants.ActionTypes.UPDATED:
+            _configuration = event.payload;
+            FactoryStore.emitChange();
+            break;
+
+        default:
+            // do nothing
     }
 
     return true;

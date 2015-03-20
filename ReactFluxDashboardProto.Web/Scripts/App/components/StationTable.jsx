@@ -21,8 +21,9 @@ var StationTable = React.createClass({
     componentDidMount: function() {
         FactoryStore.bind(this.stationsChanged);
 
+        // Start fetching the data.  Store change event will occur when the data is ready.
         var line = new Line(this.getParams().lineId)
-        StationActionCreators.loadAll(line);
+        StationActionCreators.loadStationStatuses(line);
     },
 
     componentWillUnmount: function() {

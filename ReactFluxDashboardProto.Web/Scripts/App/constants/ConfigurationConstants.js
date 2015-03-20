@@ -8,7 +8,9 @@ var ConfigurationConstants = {
 
     ActionTypes: keyMirror({
         LOAD: null,
-        UPDATE: null
+        LOADED: null,
+        UPDATE: null,
+        UPDATED: null
     })
 
 };

@@ -10,6 +10,7 @@ var React = require("React/addons");
 var FactoryStore = require("../stores/FactoryStore");
 var ConfigurationActionCreators = require('../actions/ConfigurationActionCreators');
 var DashboardConfiguration = require('../domain/DashboardConfiguration');
+var Button = require('react-bootstrap').Button;
 var _ = require('lodash');
 
 var ConfigurationForm = React.createClass({
@@ -18,6 +19,8 @@ var ConfigurationForm = React.createClass({
 
     componentDidMount: function() {
         FactoryStore.bind(this._configurationChanged);
+
+        // Start fetching the data.  Store change event will occur when the data is ready.
         ConfigurationActionCreators.load();
     },
 
@@ -51,7 +54,7 @@ var ConfigurationForm = React.createClass({
     },
 
     _renderField: function(propName, label, field) {
-        // Render errors
+        // Render field errors
         var formGroupClass = "form-group";
         var helpText;
         if (propName in this.state.Errors) {
@@ -100,6 +103,7 @@ var ConfigurationForm = React.createClass({
                         </div>
                     </div>
                     <div className="panel-footer">
+                        <Button bsStyle="primary" block onClick={this._handleSubmitButtonClick}>Submit</Button>
                         <button type="button" className="btn btn-primary btn-block" onClick={this._handleSubmitButtonClick}>Submit</button>
                     </div>
                 </form>

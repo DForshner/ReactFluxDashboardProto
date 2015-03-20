@@ -4,6 +4,7 @@
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var StationDetailsConstants = require('../constants/StationDetailConstants');
+var StationDetailWebApiUtils = require('../webapiutils/StationDetailWebApiUtils')
 var Station = require('../domain/Station');
 
 var StationDetailsActionCreators = {
@@ -15,6 +16,8 @@ var StationDetailsActionCreators = {
           action: StationDetailsConstants.ActionTypes.GET_DEFECT_DATA,
           payload: station
       });
+
+      StationDetailWebApiUtils.getDefectData(station)
   }
 
 };

@@ -2,6 +2,8 @@
 
 "use strict";
 
+// ------------------------------------------ Dependencies
+
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
@@ -31,7 +33,7 @@ var ErrorStore = assign({}, EventEmitter.prototype, {
     // ------------------------------------------ Event methods
 
     emitChange: function() {
-        console.log("Errors: ", _errors);
+        console.log("Emit changed event");
         this.emit(CHANGED_EVENT);
     },
 
@@ -47,20 +49,32 @@ var ErrorStore = assign({}, EventEmitter.prototype, {
 });
 
 // Configure store to respond to events dispatched by views.
-AppDispatcher.register(function(event) {
+ErrorStore.dispatchToken = AppDispatcher.register(function(event) {
     var action = event.action;
 
     if (typeof action === "undefined") {
-        console.log("Undefined action: check constant ActionTypes");
-    } else {
-        console.log("Action: ", action, " Payload: ", event.payload);
+        console.log("Undefined action: check that ActionTypes constants are correct");
+        return true;
     }
 
+    console.log("Action: ", action, " Payload: ", event.payload);
+
     switch( action ) {
+
+        case ErrorConstants.ActionTypes.ADD:
+            var error = event.payload;
+            console.assert(error instanceof Error);
+            _errors.push(error);
+            ErrorStore.emitChange();
+            break;
+
         case ErrorConstants.ActionTypes.CLEAR:
             _clearErrors();
             ErrorStore.emitChange();
             break;
+
+        default:
+            // do nothing
     }
 
     return true;

@@ -4,13 +4,23 @@
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var ConfigurationConstants = require('../constants/ConfigurationConstants');
+var ConfigurationWebApiUtils = require('../webapiutils/ConfigurationWebApiUtils');
 
-var ConfigurationActions = {
+var ConfigurationActionCreators = {
 
-    update: function(payload) {
+    update: function(updatedConfig) {
         AppDispatcher.dispatch({
             action: ConfigurationConstants.ActionTypes.UPDATE,
-            payload: payload
+            payload: updatedConfig
+        });
+
+        ConfigurationWebApiUtils.updateConfiguration(updatedConfig);
+    },
+
+    receiveUpdated: function(updatedConfig) {
+        AppDispatcher.dispatch({
+            action: ConfigurationConstants.ActionTypes.UPDATED,
+            payload: updatedConfig
         });
     },
 
@@ -19,7 +29,17 @@ var ConfigurationActions = {
             action: ConfigurationConstants.ActionTypes.LOAD,
             payload: {}
         });
+
+        ConfigurationWebApiUtils.getConfiguration();
+    },
+
+    loaded: function(config){
+        AppDispatcher.dispatch({
+            action: ConfigurationConstants.ActionTypes.LOADED,
+            payload: config
+        });
     }
+
 };
 
-module.exports = ConfigurationActions;
+module.exports = ConfigurationActionCreators;

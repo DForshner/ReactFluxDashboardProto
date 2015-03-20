@@ -7,7 +7,8 @@ var keyMirror = require('keymirror');
 var StationDetailConstants = {
 
     ActionTypes: keyMirror({
-        GET_DEFECT_DATA: null
+        GET_DEFECT_DATA: null,
+        RECEIVED_DEFECT_DATA: null
     })
 
 };

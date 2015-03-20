@@ -9,16 +9,17 @@ var LineActionCreators = require('../actions/LineActionCreators');
 var LineTableHeader = require("./LineTableHeader.jsx");
 var LineTableBody = require("./LineTableBody.jsx");
 
-var ErrorTable = require("./ErrorTable.jsx");
-
 var LineTable = React.createClass({
 
     _linesChanged: function() {
+        console.log("lines changed");
         this.forceUpdate();
     },
 
     componentDidMount: function() {
         FactoryStore.bind(this._linesChanged);
+
+        // Start fetching the data.  Store change event will occur when the data is ready.
         LineActionCreators.loadAll();
     },
 
@@ -27,13 +28,6 @@ var LineTable = React.createClass({
     },
 
     render: function() {
-        var errors;
-        if (FactoryStore.hasErrors()) {
-            errors = (
-                <ErrorTable errors={FactoryStore.getErrors()} />
-            );
-        }
-
         var lineStatues = FactoryStore.getAllLines();
         return (
             <div className="LineTable">
@@ -42,8 +36,6 @@ var LineTable = React.createClass({
                     <LineTableHeader />
                     <LineTableBody lineStatuses={lineStatues} />
                 </table>
-
-                {errors}
             </div>
         );
     }

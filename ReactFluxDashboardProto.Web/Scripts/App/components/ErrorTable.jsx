@@ -10,15 +10,27 @@
 
 "use strict";
 
+// ------------------------------------------ Dependencies
+
 var React = require("React/addons");
 
 var ErrorActionCreators = require('../actions/ErrorActionCreators');
 var ErrorRow = require("./ErrorRow.jsx");
 
+var ErrorStore = require("../stores/ErrorStore");
+
 var ErrorTable = React.createClass({
 
-    propTypes: {
-        errors: React.PropTypes.array.isRequired
+    componentDidMount: function() {
+        ErrorStore.bind(this._errorsOccured);
+    },
+
+    componentWillUnmount: function() {
+        ErrorStore.unbind(this._errorsOccured);
+    },
+
+    _errorsOccured: function() {
+        this.forceUpdate();
     },
 
     _handleClearButtonClick: function() {
@@ -26,18 +38,23 @@ var ErrorTable = React.createClass({
     },
 
     render: function() {
-        var rows = this.props.errors.map(function(error, i) {
+        if (!ErrorStore.hasErrors()) {
+            return (<div className="ErrorTable"></div>);
+        }
+        var errors = ErrorStore.getErrors();
+        var rows = errors.map(function(error, i) {
+            console.log(typeof error);
             return (
                 <ErrorRow error={error} key={i} />
             );
         });
         return (
-            <div className="ErrorTable panel panel-default">
+            <div className="ErrorTable panel">
                 <div className="panel-body">
                     <table className="table table-hover">
                         <thead>
                             <tr>
-                                <th>Messages</th>
+                                <th>Errors</th>
                             </tr>
                         </thead>
                         <tbody>

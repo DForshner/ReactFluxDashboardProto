@@ -4,6 +4,8 @@
 
 var DashboardConfiguration = require('../domain/DashboardConfiguration');
 var Mapper = require('../infrastructure/Mapper');
+var ServerActionCreators = require('../actions/ServerActionCreators');
+var ErrorActionCreators = require('../actions/ErrorActionCreators');
 var ConnectionError = require('../infrastructure/ConnectionError');
 var URLBuilder = require('../infrastructure/URLBuilder');
 var $ = require('jquery');
@@ -13,9 +15,7 @@ var ROUTE = "/api/dashboardconfiguration/";
 
 var ConfigurationWebApiUtils = {
 
-    getConfiguration: function(callback) {
-        console.assert(typeof callback === 'function')
-
+    getConfiguration: function() {
         var url = URLBuilder.build(ROUTE);
 
         $.ajax({
@@ -23,19 +23,18 @@ var ConfigurationWebApiUtils = {
         }).done(function(response) {
             var str = JSON.stringify(response);
             var config = Mapper.mapTo(DashboardConfiguration, str);
-            callback(null, config);
-        }).error(function(error) {
+            ServerActionCreators.recievedConfig(config);
+        }).error(function(response) {
             // Always pass back a custom Error type
-            callback(ConnectionError.createFromResponse(error), null);
+            var error = ConnectionError.createFromResponse(response);
+            ErrorActionCreators.add(error);
         });
     },
 
-    updateConfiguration: function(updatedConfig, callback) {
+    updateConfiguration: function(updatedConfig) {
         console.assert(updatedConfig instanceof DashboardConfiguration);
-        console.assert(typeof callback === 'function')
 
         var url = URLBuilder.build(ROUTE);
-
         var payload = JSON.stringify(updatedConfig);
 
         $.ajax({
@@ -47,10 +46,10 @@ var ConfigurationWebApiUtils = {
         }).done(function(response) {
             var str = JSON.stringify(response);
             var config = Mapper.mapTo(DashboardConfiguration, str);
-            callback(null, config);
-        }).error(function(error) {
-            // Always pass back a custom Error type
-            callback(ConnectionError.createFromResponse(error), null);
+            ServerActionCreators.receiveUpdatedConfig(config);
+        }).error(function(response) {
+            var error = ConnectionError.createFromResponse(response);
+            ErrorActionCreators.add(error);
         });
     }
 };

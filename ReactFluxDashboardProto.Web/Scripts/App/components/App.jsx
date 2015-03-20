@@ -2,6 +2,8 @@
 
 "use strict";
 
+// ------------------------------------------ Dependencies
+
 var React = require("React/addons");
 
 var Router = require('react-router');
@@ -15,9 +17,11 @@ var ConfigurationForm = require("./ConfigurationForm.jsx");
 var LineTable = require("./LineTable.jsx");
 var StationTable = require("./StationTable.jsx");
 var StationDetails = require("./StationDetails.jsx");
+var ErrorTable = require("./ErrorTable.jsx");
 var NotFound = require("./NotFound.jsx");
 
 var App = React.createClass({
+
     render: function () {
         return (
             <div className="container-fluid">
@@ -37,6 +41,9 @@ var App = React.createClass({
                         <RouteHandler/>
                     </div>
                 </div>
+
+                { /* Errors */}
+                <ErrorTable/>
           </div>
         );
     }
