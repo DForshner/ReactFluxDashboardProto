@@ -4,7 +4,7 @@
 
 // ------------------------------------------ Dependencies
 
-var React = require("React/addons");
+var React = require('react');
 
 var Router = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
@@ -14,10 +14,10 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
 var ConfigurationForm = require("./ConfigurationForm.jsx");
-var LineTable = require("./LineTable.jsx");
-var StationTable = require("./StationTable.jsx");
+var FactoryOverview = require("./FactoryOverview.jsx");
+var LineOverview = require("./LineOverview.jsx");
 var StationDetails = require("./StationDetails.jsx");
-var ErrorTable = require("./ErrorTable.jsx");
+var GlobalErrorList = require("./GlobalErrorList.jsx");
 var NotFound = require("./NotFound.jsx");
 
 var App = React.createClass({
@@ -43,21 +43,23 @@ var App = React.createClass({
                 </div>
 
                 { /* Errors */}
-                <ErrorTable/>
-          </div>
+                <GlobalErrorList />
+
+            </div>
         );
     }
+
 });
 
 var routes = (
     <Route name="dashboard" path="/" handler={App}>
+        <DefaultRoute handler={FactoryOverview}/>
 
-        <Route name="factoryOverview" handler={LineTable}/>
-        <Route name="lineOverview" path="line/:lineId" handler={StationTable}/>
+        <Route name="factoryOverview" handler={FactoryOverview}/>
+        <Route name="lineOverview" path="line/:lineId" handler={LineOverview}/>
         <Route name="stationDetails" path="line/:lineId/station/:stationId" handler={StationDetails}/>
         <Route name="configuration" handler={ConfigurationForm}/>
 
-        <DefaultRoute handler={LineTable}/>
         <NotFoundRoute handler={NotFound}/>
     </Route>
 );
@@ -65,3 +67,8 @@ var routes = (
 Router.run(routes, function (Handler) {
   React.render(<Handler/>, document.getElementById('dashboard-content'));
 });
+
+//React.render(
+//    <App />,
+//    document.getElementById('dashboard-content')
+//);

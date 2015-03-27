@@ -17,7 +17,7 @@ var StationDetailsActionCreators = {
           payload: station
       });
 
-      StationDetailWebApiUtils.getDefectData(station)
+      StationDetailWebApiUtils.getDefectData(station);
   }
 
 };

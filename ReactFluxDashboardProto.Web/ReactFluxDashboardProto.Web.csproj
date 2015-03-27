@@ -143,8 +143,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\DashboardConfigurationsController.cs" />
+    <Compile Include="Api\ConveyorAlarmsController.cs" />
+    <Compile Include="Api\EquipmentAlarmsController.cs" />
     <Compile Include="Api\StationDefectCountsController.cs" />
     <Compile Include="Api\LineStatusesController.cs" />
+    <Compile Include="Api\StationsController.cs" />
     <Compile Include="Api\StationStatusesController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -153,6 +156,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Ignore\DashboardConfigurationDto.cs" />
+    <Compile Include="Ignore\DomainException.cs" />
+    <Compile Include="Ignore\ConveyorAlarmDto.cs" />
+    <Compile Include="Ignore\StationDto.cs" />
+    <Compile Include="Ignore\FormValidationException.cs" />
+    <Compile Include="Ignore\HandleApiExceptionAttribute.cs" />
+    <Compile Include="Ignore\EquipmentAlarmDto.cs" />
     <Compile Include="Ignore\LineStatusDto.cs" />
     <Compile Include="Ignore\ScriptRunner.cs" />
     <Compile Include="Ignore\StationDefectCountDto.cs" />

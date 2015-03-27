@@ -1,5 +1,6 @@
 ﻿using ReactFluxDashboardProto.Web.Ignore;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Http;
 
 namespace ReactFluxDashboardProto.Web.Api
@@ -27,6 +28,9 @@ namespace ReactFluxDashboardProto.Web.Api
         [HttpPut]
         public DashboardConfigurationDto Put([FromBody] DashboardConfigurationDto updated)
         {
+            if (updated.Line1Description == "") { throw new FormValidationException("Line1Description", "Required."); }
+            if (updated.Line2Description == "") { throw new FormValidationException("Line2Description", "Required."); }
+
             _fakeConfig = updated;
             return _fakeConfig;
         }

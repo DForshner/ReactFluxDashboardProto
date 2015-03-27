@@ -6,7 +6,7 @@ var LineStatus = require('../domain/LineStatus');
 var Mapper = require('../infrastructure/Mapper');
 var ConnectionError = require('../infrastructure/ConnectionError');
 var ServerActionCreators = require('../actions/ServerActionCreators');
-var ErrorActionCreators = require('../actions/ErrorActionCreators');
+var GlobalErrorActionCreators = require('../actions/GlobalErrorActionCreators');
 var URLBuilder = require('../infrastructure/URLBuilder');
 var $ = require('jquery');
 
@@ -26,7 +26,7 @@ var LineWebApiUtils = {
             ServerActionCreators.receivedAllLineStatuses(lineStatuses);
         }).error(function(response) {
             var error = ConnectionError.createFromResponse(response);
-            ErrorActionCreators.add(error);
+            GlobalErrorActionCreators.add(error);
         });
     }
 };

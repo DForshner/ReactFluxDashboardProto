@@ -6,11 +6,10 @@
 
 "use strict";
 
-var React = require("React/addons");
-var FactoryStore = require("../stores/FactoryStore");
+var React = require("react/addons");
+var ConfigurationStore = require("../stores/ConfigurationStore");
 var ConfigurationActionCreators = require('../actions/ConfigurationActionCreators');
 var DashboardConfiguration = require('../domain/DashboardConfiguration');
-var Button = require('react-bootstrap').Button;
 var _ = require('lodash');
 
 var ConfigurationForm = React.createClass({
@@ -18,18 +17,18 @@ var ConfigurationForm = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
 
     componentDidMount: function() {
-        FactoryStore.bind(this._configurationChanged);
+        ConfigurationStore.bind(this._configurationChanged);
 
         // Start fetching the data.  Store change event will occur when the data is ready.
         ConfigurationActionCreators.load();
     },
 
     componentWillUnmount: function() {
-        FactoryStore.unbind(this._configurationChanged);
+        ConfigurationStore.unbind(this._configurationChanged);
     },
 
     _configurationChanged: function() {
-        var config = FactoryStore.getConfiguration();
+        var config = ConfigurationStore.getConfiguration();
         console.assert(config instanceof DashboardConfiguration);
 
         config.Errors = {};
@@ -103,7 +102,6 @@ var ConfigurationForm = React.createClass({
                         </div>
                     </div>
                     <div className="panel-footer">
-                        <Button bsStyle="primary" block onClick={this._handleSubmitButtonClick}>Submit</Button>
                         <button type="button" className="btn btn-primary btn-block" onClick={this._handleSubmitButtonClick}>Submit</button>
                     </div>
                 </form>

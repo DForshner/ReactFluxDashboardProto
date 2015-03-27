@@ -7,7 +7,7 @@ module.exports = {
         // A separate bundle will be generated for each
         // bundle config in the list below
         bundleConfigs: [{
-            entries: src + '/components/app.jsx',
+            entries: src + '/components/App.jsx',
             dest: dest,
             outputName: 'dashboardPrototypeBundle.js'
         }]

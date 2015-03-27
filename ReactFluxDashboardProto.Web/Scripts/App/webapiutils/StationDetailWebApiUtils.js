@@ -7,7 +7,7 @@ var StationDefectCount = require('../domain/StationDefectCount');
 var Mapper = require('../infrastructure/Mapper');
 var ConnectionError = require('../infrastructure/ConnectionError');
 var ServerActionCreators = require('../actions/ServerActionCreators');
-var ErrorActionCreators = require('../actions/ErrorActionCreators');
+var GlobalErrorActionCreators = require('../actions/GlobalErrorActionCreators');
 var URLBuilder = require('../infrastructure/URLBuilder');
 var $ = require('jquery');
 
@@ -29,7 +29,7 @@ var StationDetailWebApiUtils = {
             ServerActionCreators.receivedStationDetails(station, defects);
         }).error(function(response) {
             var error = ConnectionError.createFromResponse(response);
-            ErrorActionCreators.add(error);
+            GlobalErrorActionCreators.add(error);
         });
     }
 };

@@ -1,0 +1,1 @@
+// Actions contain no functionality, but rather describe an event in our application.

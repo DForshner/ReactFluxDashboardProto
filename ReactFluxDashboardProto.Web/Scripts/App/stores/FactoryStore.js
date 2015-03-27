@@ -1,10 +1,4 @@
-// Global object that contains factory domain data, business
-// logic to get/update/delete, and application state . Registers
-// for events from the dispatcher and emits events to the
-// event emitter.
 
-// Stores that are part of one section of your application should be contained within a single store.
-// Think of them like pages of your webapp, a modal or some other contained section.
 
 "use strict";
 
@@ -16,7 +10,6 @@ var Map = require('immutable').Map;
 var LineConstants = require('../constants/LineConstants');
 var StationConstants = require('../constants/StationConstants');
 var StationDetailConstants = require('../constants/StationDetailConstants');
-var ConfigurationConstants = require('../constants/ConfigurationConstants');
 
 var Station = require('../domain/Station');
 var Line = require('../domain/Line');
@@ -25,15 +18,25 @@ var Line = require('../domain/Line');
 var CHANGED_EVENT = "FACTORYSTORE_CHANGED";
 
 var _lines = [];
+var _stationsIds = Map();
 var _stations = Map();
 var _stationDefects = Map();
-var _configuration = null;
 
 var FactoryStore = assign({}, EventEmitter.prototype, {
 
     // ------------------------------------------ Accessor methods
 
     getAllLines: function() { return _lines; },
+
+    getStationIds: function(line) {
+        console.assert(line instanceof Line);
+
+        if (_stationsIds.has(line.getHashCode())) {
+            return _stationsIds.get(line.getHashCode());
+        }
+
+        return [];
+    },
 
     getAllStations: function(line) {
         console.assert(line instanceof Line);
@@ -54,8 +57,6 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
 
         return [];
     },
-
-    getConfiguration: function() { return _configuration; },
 
     // ------------------------------------------ Event methods
 
@@ -78,18 +79,19 @@ var FactoryStore = assign({}, EventEmitter.prototype, {
 // Configure store to respond to events dispatched by views.
 FactoryStore.dispatchToken = AppDispatcher.register(function(event) {
     var action = event.action;
-
-    if (typeof action === "undefined") {
-        console.log("Undefined action: check that ActionTypes constants are correct");
-        return true;
-    }
-
     console.log("Action: ", action, " Payload: ", event.payload);
 
     switch( action ) {
 
         case LineConstants.ActionTypes.RECEIVED_LINE_STATUSES:
             _lines = event.payload;
+            FactoryStore.emitChange();
+            break;
+
+        case StationConstants.ActionTypes.RECEIVED_STATION_IDS:
+            var line = event.context;
+            var ids = event.payload;
+            _stationsIds = _stationsIds.set(line.getHashCode(), ids);
             FactoryStore.emitChange();
             break;
 
@@ -107,14 +109,8 @@ FactoryStore.dispatchToken = AppDispatcher.register(function(event) {
             FactoryStore.emitChange();
             break;
 
-        case ConfigurationConstants.ActionTypes.LOADED:
-            _configuration = event.payload;
-            FactoryStore.emitChange();
-            break;
-
-        case ConfigurationConstants.ActionTypes.UPDATED:
-            _configuration = event.payload;
-            FactoryStore.emitChange();
+        case void 0:
+            console.log("Undefined action: check that ActionTypes constants are correct");
             break;
 
         default:

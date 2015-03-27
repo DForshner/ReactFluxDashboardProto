@@ -17,7 +17,8 @@ var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var config = require('../config').browserify;
-
+var gulpif = require('gulp-if');
+var stripDebug = require('gulp-strip-debug');
 
 gulp.task('browserify', function (callback) {
 
@@ -27,44 +28,58 @@ gulp.task('browserify', function (callback) {
     var browserifyThis = function (bundleConfig) {
 
         var bundler = browserify({
+
             // Required watchify args
             cache: {}, packageCache: {}, fullPaths: true,
+
             // Specify the entry point of your app
             entries: bundleConfig.entries,
+
             // Add file extentions to make optional in your requires
             extensions: config.extensions,
             transform: [reactify],
+
             // Enable source maps!
             debug: isDebug
         });
 
         var bundle = function () {
+
             // Log when bundling starts
             bundleLogger.start(bundleConfig.outputName);
 
             return bundler
                 .bundle()
+
                 // Report compile errors
                 .on('error', handleErrors)
 
                 // Use vinyl-source-stream to make the
-                // stream gulp compatible. Specifiy the
+                // stream gulp compatible. Specify the
                 // desired output filename here.
                 .pipe(source(bundleConfig.outputName))
+
                 .pipe(buffer())
+
                 // Specify the output destination
                 .pipe(gulp.dest(bundleConfig.dest))
+
+                .pipe(gulpif(!isDebug, stripDebug()))
+
                 .on('end', reportFinished);
         };
 
         if (global.isWatching) {
+
             // Wrap with watchify and rebundle on changes
             bundler = watchify(bundler);
+
             // Rebundle on update
             bundler.on('update', bundle);
         }
 
         var reportFinished = function () {
+
             // Log when bundling completes
             bundleLogger.end(bundleConfig.outputName);
 

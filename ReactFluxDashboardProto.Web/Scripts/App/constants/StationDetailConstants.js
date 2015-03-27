@@ -1,5 +1,3 @@
-// Station detail constants
-
 "use strict";
 
 var keyMirror = require('keymirror');
