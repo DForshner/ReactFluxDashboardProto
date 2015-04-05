@@ -12,13 +12,11 @@ var LineTableBody = React.createClass({
         lineStatuses: React.PropTypes.array.isRequired
     },
 
-    //lineStatuses: React.PropTypes.arrayOf(LineRow).isRequired
-
     render: function() {
         var lineStatuses = this.props.lineStatuses;
         var rows = lineStatuses.map(function(lineStatus, i) {
             return (
-                <LineRow lineStatus={lineStatus} key={i} />
+                <LineRow lineStatus={lineStatus} key={lineStatus.getHashCode()} />
             );
         });
         return (

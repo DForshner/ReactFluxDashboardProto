@@ -3,21 +3,31 @@
 "use strict";
 
 var React = require("react");
+var SetIntervalMixin = require('../infrastructure/mixins/setIntervalMixin.jsx');
 var FactoryStore = require("../stores/FactoryStore");
 var LineActionCreators = require('../actions/LineActionCreators');
 var LineTable = require("./FactoryOverview/LineTable.jsx");
 
+var UPDATE_FREQUENCY = 2000; // 1 seconds
+
 var FactoryOverview = React.createClass({
+
+    mixins: [ SetIntervalMixin ],
 
     _linesChanged: function() {
         this.forceUpdate();
     },
 
+    _updateState: function() {
+        LineActionCreators.loadAll();
+    },
+
     componentDidMount: function() {
         FactoryStore.bind(this._linesChanged);
 
-        // Start fetching the data.  Store change event will occur when the data is ready.
-        LineActionCreators.loadAll();
+        this._updateState();
+
+        this.setInterval(this._updateState, UPDATE_FREQUENCY);
     },
 
     componentWillUnmount: function() {

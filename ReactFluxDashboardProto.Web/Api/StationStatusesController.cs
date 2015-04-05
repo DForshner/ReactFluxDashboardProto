@@ -15,11 +15,7 @@ namespace ReactFluxDashboardProto.Web.Api
                 throw new Exception("Something has gone horrible wrong.");
             }
 
-            return new[] 
-            {
-                new StationStatusDto { StationId = "A", Name = "Station A", Total = 100 },
-                new StationStatusDto { StationId = "B", Name = "Station B", Total = 50 },
-            };
+            return StationService.Statuses;
         }
     }
 }

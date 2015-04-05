@@ -4,7 +4,7 @@
 
 var React = require("react");
 var d3 = require("d3");
-//var HeatMapEvent = require("../../domain/HeatMapEvent");
+var HeatMapEvent = require("../../domain/HeatMapEvent");
 var _ = require("lodash");
 
 var _width = 0;
@@ -129,6 +129,16 @@ var HeatMap = {
 };
 
 var EventHeatMap = React.createClass({
+
+    propTypes: {
+        slices: React.PropTypes.oneOfType([
+            React.PropTypes.arrayOf(Object), // Empty array
+            React.PropTypes.arrayOf(HeatMapEvent)
+        ]).isRequired,
+
+        start: React.PropTypes.number.isRequired,
+        end: React.PropTypes.number.isRequired,
+    },
 
     getDefaultProps: function() {
         return { dimensions: { width: '140', height: '50' } };

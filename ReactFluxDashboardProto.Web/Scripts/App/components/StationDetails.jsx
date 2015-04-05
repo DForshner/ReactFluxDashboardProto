@@ -6,6 +6,7 @@ var React = require("react");
 var Router = require("react-router");
 var DefectTypePieChart = require("./StationDetails/DefectTypePieChart.jsx");
 var AlarmHeatMap = require("./StationDetails/AlarmHeatMap.jsx");
+var TemperatureProfile = require("./StationDetails/TemperatureProfile.jsx");
 var FactoryStore = require("../stores/FactoryStore");
 var StationDetailsActionCreators = require('../actions/StationDetailsActionCreators');
 var Station = require('../domain/Station');
@@ -14,6 +15,7 @@ var AlarmEvent = require('../domain/AlarmEvent');
 var _msInMin = 1000 * 60;
 var _msInHour = _msInMin * 60;
 
+// TODO: Get this alarm data from the server
 var _equipmentEnd = Date.now();
 var _equipmentStart = _equipmentEnd - (24 * _msInHour);
 var _equipmentAlarms = ([
@@ -33,6 +35,7 @@ var _converyorAlarms = ([
     new AlarmEvent("Alarm A", Date.now() - 16 * _msInHour),
     new AlarmEvent("Alarm A", Date.now() - 23.9 * _msInHour)
 ]);
+
 
 var StationDetails = React.createClass({
 
@@ -67,6 +70,13 @@ var StationDetails = React.createClass({
                             <div className="panel-heading">Defect Counts</div>
                             <div className="panel-body">
                                 <DefectTypePieChart defectCounts={defectCounts} />
+                            </div>
+                        </div>
+
+                        <div className="panel panel-default">
+                            <div className="panel-heading">Temperature Profile</div>
+                            <div className="panel-body">
+                                <TemperatureProfile />
                             </div>
                         </div>
                     </div>

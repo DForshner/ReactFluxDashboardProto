@@ -2,75 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c848a6c4-6793-453a-aed9-3b77a741dc18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/AlarmEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App - Old.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/BrowserEventActionCreators.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/BrowserEventConstants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/utils/BrowserEventUtils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/ClickableToolTip.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/FormValidationError.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/HeatmapEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTable.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/PieChart.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/PieChartSlice.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationConveyorAlarmActionCreators.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationConveyorAlarmConstants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationConveyorAlarmsWebApiUtils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationEquipmentAlarmActionCreators.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationEquipmentAlarmConstants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationEquipmentAlarmsWebApiUtils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationId.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/ToolTipActionCreators.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ToolTipConstants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/_StandardActionCreatorsDesign.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/_StandardStoreDesign.jsx" />
-      <change type="DELETED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\dashboardPrototypeBundle.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\actions\ErrorActionCreators.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/GlobalErrorActionCreators.js" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\DefectTypePieChart.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/DefectTypePieChart.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\ErrorRow.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/GlobalErrorList/ErrorRow.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\ErrorTable.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/GlobalErrorList.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\LineRow.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineRow.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\LineTable.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTable.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\LineTableBody.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableBody.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\LineTableHeader.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableHeader.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\StationRow.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/StationRow.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\StationTable.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\StationTableBody.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableBody.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\StationTableHeader.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableHeader.jsx" />
-      <change type="MOVED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\stores\ErrorStore.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/GlobalErrorStore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ConfigurationConstants.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ConfigurationConstants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/ConfigurationForm.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/ConfigurationForm.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/ChartBody.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/CreateWithTooltipMixin.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/DataSeries.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/Line.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/SetIntervalMixin.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/TemperatureProfile.jsx" />
+      <change type="DELETED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\App - Old.jsx" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\Station Overview - Early.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/ConfigurationStore.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/ConfigurationStore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/ConfigurationWebApiUtils.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/ConfigurationWebApiUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/DashboardConfigurationsController.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/DashboardConfigurationsController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ErrorConstants.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ErrorConstants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/ConveyorAlarmsController.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/ConveyorAlarmsController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/FactoryStore.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/FactoryStore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Views/Shared/LayoutPage.cshtml" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Views/Shared/LayoutPage.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/LineConstants.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/LineConstants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/LineWebApiUtils.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/LineWebApiUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/NotFound.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/NotFound.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/GlobalErrorStore.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/GlobalErrorStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineRow.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineRow.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableBody.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableBody.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableHeader.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableHeader.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/LineStatus.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/LineStatus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Ignore/LineStatusDto.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Ignore/LineStatusDto.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/LineStatusesController.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/LineStatusesController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableBody.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableBody.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableHeader.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableHeader.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/README.md" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/ReactFluxDashboardProto.Web.csproj" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/ReactFluxDashboardProto.Web.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/ServerActionCreators.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/ServerActionCreators.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationActionCreators.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationActionCreators.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationConstants.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationConstants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationDetailConstants.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationDetailConstants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationDetailWebApiUtils.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationDetailWebApiUtils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationDetailsActionCreators.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationDetailsActionCreators.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationWebApiUtils.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationWebApiUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/App_Start/WebApiConfig.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/App_Start/WebApiConfig.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/_StandardComponentDesign.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/_StandardComponentDesign.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/browserify.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/browserify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/config.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/StationRow.jsx" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/StationRow.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationStatus.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationStatus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Ignore/StationStatusDto.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Ignore/StationStatusDto.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/StationStatusesController.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/StationStatusesController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/StationsController.cs" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Api/StationsController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/dashboardPrototypeBundle.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/dashboardPrototypeBundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/package.json" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/watch.js" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/watch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/packages.config" afterPath="$PROJECT_DIR$/ReactFluxDashboardProto.Web/packages.config" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ReactFluxDashboardProto.iws" />
@@ -102,33 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/DefectTypePieChart.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/README.md" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/ClickableToolTip.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/ToolTipActionCreators.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/utils/MouseEventUtils.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/BrowserEventActionCreators.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/utils/BrowserEventUtils.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/watch.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/browserify.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/HeatmapEvent.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/Dimensions.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/AlarmEvent.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App - Old.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/package.json" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationTable.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineStationTable.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineStationTable/StationTableBody.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineStationTable/LineStationTableHeader.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/GlobalErrorList.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTable.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineTable.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTable.jsx" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App.jsx" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationEquipmentAlarmConstants.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/LineConstants.js" />
@@ -142,7 +84,6 @@
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/EquipmentAlarmsWebApiUtils.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationEquipmentAlarmsWebApiUtils.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationConveyorAlarmsWebApiUtils.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationEquipmentAlarmActionCreators.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationDetailsActionCreators.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationConveyorAlarmActionCreators.js" />
@@ -151,8 +92,36 @@
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationId.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationWebApiUtils.js" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/actions/StationActionCreators.js" />
-        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/FactoryStore.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableHeader.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/setIntervalMixin.jsx.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableBody.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/LineStatus.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableHeader.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/package.json" />
         <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/FactoryStore.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/GlobalErrorStore.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/ConfigurationStore.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/setIntervalMixin.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/SetIntervalMixin.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/createWithTooltipMixin.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/CreateWithTooltipMixin.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineRow.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/StationRow.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/README.md" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/Line.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableBody.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationStatus.js" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/TemperatureProfile.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/DataSeries.jsx" />
+        <option value="$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/ChartBody.jsx" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -237,7 +206,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -258,11 +226,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/WorkSpace/Customers/United Airlines/SmartBPMS/Applications/WebClient" />
     <property name="JavaScriptLanguageLevel" value="JSX" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -275,11 +244,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\StationDetails" />
+      <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\Common\MultiSeriesLineChart" />
       <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\domain" />
       <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\actions" />
       <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\webapiutils" />
-      <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\constants" />
-      <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\FactoryOverview" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dforshner\Documents\GitHub\ReactFluxDashboardProto\ReactFluxDashboardProto.Web\Scripts\App\components\Common" />
@@ -387,26 +356,47 @@
     <frame x="-4" y="-4" width="1928" height="1176" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23551106" sideWeight="0.19505233" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65937203" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14462417" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22866175" sideWeight="0.19375" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22866175" sideWeight="0.80625" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23882017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23551106" sideWeight="0.8049477" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14272122" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65937203" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19410086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.65937203" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14462417" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28451002" sideWeight="0.19375" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921028" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28451002" sideWeight="0.80625" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23882017" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -429,319 +419,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/gulp/tasks/browserify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44876784" vertical-offset="1031" max-vertical-offset="1802">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/AlarmEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30869" vertical-offset="0" max-vertical-offset="771">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/HeatmapEvent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13229571" vertical-offset="0" max-vertical-offset="771">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6575875" vertical-offset="1839" max-vertical-offset="2788">
-          <caret line="138" column="49" selection-start-line="138" selection-start-column="49" selection-end-line="138" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/DefectTypePieChart.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24254215" vertical-offset="0" max-vertical-offset="771">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4067114" vertical-offset="292" max-vertical-offset="1054">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App - Old.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8015564" vertical-offset="453" max-vertical-offset="1275">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/ConfigurationStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/LineStatus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/NotFound.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.154345" vertical-offset="0" max-vertical-offset="771">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableBody.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6835279" vertical-offset="0" max-vertical-offset="771">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/StationRow.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46303502" vertical-offset="0" max-vertical-offset="771">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/GlobalErrorList/ErrorRow.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26459143" vertical-offset="0" max-vertical-offset="771">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTable.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.022049287" vertical-offset="0" max-vertical-offset="771">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/GlobalErrorList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.036316473" vertical-offset="538" max-vertical-offset="1309">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44098574" vertical-offset="0" max-vertical-offset="771">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableBody.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41893643" vertical-offset="0" max-vertical-offset="771">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineRow.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3307393" vertical-offset="0" max-vertical-offset="771">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTable.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08819715" vertical-offset="0" max-vertical-offset="771">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39688715" vertical-offset="0" max-vertical-offset="771">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47081712" vertical-offset="470" max-vertical-offset="1343">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1683">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/LineWebApiUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationDetailWebApiUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/LineConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationDetailConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ToolTipConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ErrorConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/ConfigurationConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="771">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/BrowserEventConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19844358" vertical-offset="0" max-vertical-offset="771">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationConveyorAlarmConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/ConfigurationWebApiUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41893643" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/constants/StationEquipmentAlarmConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08819715" vertical-offset="0" max-vertical-offset="771">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/webapiutils/StationConveyorAlarmsWebApiUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28664073" vertical-offset="0" max-vertical-offset="771">
           <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3527886" vertical-offset="578" max-vertical-offset="1717">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39688715" vertical-offset="0" max-vertical-offset="771">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19844358" vertical-offset="0" max-vertical-offset="771">
           <caret line="9" column="38" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,7 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,7 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24254215" vertical-offset="0" max-vertical-offset="771">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,15 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29442284" vertical-offset="198" max-vertical-offset="1394">
           <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationId.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08819715" vertical-offset="0" max-vertical-offset="771">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3307393" vertical-offset="68" max-vertical-offset="1037">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,31 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.022049287" vertical-offset="0" max-vertical-offset="771">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/FactoryStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7055772" vertical-offset="0" max-vertical-offset="2176">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30869" vertical-offset="0" max-vertical-offset="986">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/Station.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39688715" vertical-offset="0" max-vertical-offset="771">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +479,287 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28664073" vertical-offset="0" max-vertical-offset="771">
           <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/.jshintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1479">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/_StandardComponentDesign.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2652">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/HeatmapEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.083129585" vertical-offset="0" max-vertical-offset="818">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/PieChart.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.20782396" vertical-offset="272" max-vertical-offset="1904">
+          <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/Line.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTableBody.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineTable.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35330072" vertical-offset="0" max-vertical-offset="818">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTable.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/LineStatus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35330072" vertical-offset="0" max-vertical-offset="818">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41564792" vertical-offset="0" max-vertical-offset="818">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4364303" vertical-offset="0" max-vertical-offset="901">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/GlobalErrorStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1462">
+          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/ConfigurationStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1258">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/FactoryStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20782396" vertical-offset="1207" max-vertical-offset="2176">
+          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/stores/AlarmEventStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33496332" vertical-offset="899" max-vertical-offset="1717">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/CreateWithTooltipMixin.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31173593" vertical-offset="0" max-vertical-offset="818">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/infrastructure/mixins/SetIntervalMixin.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20782396" vertical-offset="0" max-vertical-offset="818">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.06234719" vertical-offset="68" max-vertical-offset="1122">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/FactoryOverview/LineRow.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4987775" vertical-offset="0" max-vertical-offset="818">
+          <caret line="25" column="107" selection-start-line="25" selection-start-column="107" selection-end-line="25" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83964646" vertical-offset="253" max-vertical-offset="1071">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0317848" vertical-offset="2718" max-vertical-offset="3536">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Configuration Form.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Factory Overview.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Global Error List.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="1853">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/DefectTypePieChart.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18704157" vertical-offset="0" max-vertical-offset="818">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/EventHeapMap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4180929" vertical-offset="2072" max-vertical-offset="2958">
+          <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/Station.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37408313" vertical-offset="0" max-vertical-offset="818">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationId.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/StationRow.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/AlarmHeatMap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24938875" vertical-offset="0" max-vertical-offset="818">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/LineOverview/LineStationTableBody.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/domain/StationStatus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18704157" vertical-offset="0" max-vertical-offset="818">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20782396" vertical-offset="0" max-vertical-offset="818">
+          <caret line="10" column="56" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/StationDetails/TemperatureProfile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/DataSeries.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6650367" vertical-offset="0" max-vertical-offset="818">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/ChartBody.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart/Line.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReactFluxDashboardProto.Web/Scripts/App/components/Common/MultiSeriesLineChart.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25183374" vertical-offset="66" max-vertical-offset="1020">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12469438" vertical-offset="0" max-vertical-offset="818">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>

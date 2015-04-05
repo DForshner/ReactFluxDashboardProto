@@ -10,11 +10,7 @@ namespace ReactFluxDashboardProto.Web.Api
         // GET: api/Stations/?LineId=A
         public IEnumerable<StationDto> Get(string lineId)
         {
-            return new[] 
-            {
-                new StationDto { StationId = "A" },
-                new StationDto { StationId = "B" },
-            };
+            return StationService.Stations;
         }
     }
 }

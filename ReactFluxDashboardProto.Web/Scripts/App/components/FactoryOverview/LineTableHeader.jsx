@@ -13,6 +13,8 @@ var LineTableHeader = React.createClass({
                 <tr>
                     <th>Name</th>
                     <th>Total</th>
+                    <th>Defects</th>
+                    <th>Defect Rate</th>
                 </tr>
             </thead>
         );

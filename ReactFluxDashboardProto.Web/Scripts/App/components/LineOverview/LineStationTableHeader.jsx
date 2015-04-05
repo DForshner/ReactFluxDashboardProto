@@ -13,6 +13,8 @@ var LineStationTableHeader = React.createClass({
                 <tr>
                     <th>Name</th>
                     <th>Total</th>
+                    <th>Retries</th>
+                    <th>Scan Errors</th>
                 </tr>
             </thead>
         );

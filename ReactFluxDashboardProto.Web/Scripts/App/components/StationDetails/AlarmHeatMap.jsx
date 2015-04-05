@@ -1,4 +1,4 @@
-// Downtime heatmap
+// Alarm heat map
 
 "use strict";
 
@@ -11,10 +11,12 @@ var AlarmHeatMap = React.createClass({
 
     propTypes: {
         alarms: React.PropTypes.oneOfType([
-            React.PropTypes.arrayOf(Object),
+            React.PropTypes.arrayOf(Object), // Empty array
             React.PropTypes.arrayOf(HeatMapEvent).isRequired
         ]).isRequired,
+
         start: React.PropTypes.number.isRequired,
+
         end: React.PropTypes.number.isRequired
     },
 

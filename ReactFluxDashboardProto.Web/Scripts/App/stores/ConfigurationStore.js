@@ -41,7 +41,7 @@ var ConfigurationStore= assign({}, EventEmitter.prototype, {
 // Configure store to respond to events dispatched by views.
 ConfigurationStore.dispatchToken = AppDispatcher.register(function(event) {
     var action = event.action;
-    console.log("Action: ", action, " Payload: ", event.payload);
+    console.log("Action: ", action);
 
     switch(action) {
 
